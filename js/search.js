@@ -1,12 +1,11 @@
 import {fetchJSON,safeText,logicalPath,safeInternalHref} from './app.js';
-import {pushSearch,plotStage,get,flag,hasFlag,finalChoice} from './state.js';
+import {pushSearch,get,finalChoice} from './state.js';
 let index=[];
 export async function loadIndex(){if(index.length)return index;index=await fetchJSON('data/search-index.json');return index}
 function norm(s){return String(s||'').toLowerCase().replace(/[（）()\s]/g,'')}
 function allowed(item){
-  const stage=plotStage();if((item.minStage||0)>stage)return false;
-  if(Array.isArray(item.requires)&&item.requires.some(x=>!hasFlag(x)))return false;
-  return true;
+  // 校内公开资料不因玩家的阅读顺序而隐藏。只有下一学年的终局缓存保持时间锁。
+  return !(/hist_0724_2026_cache|post_2027_two_versions/.test(item.url||'')) || !!finalChoice();
 }
 export function runSearch(term){
   const q=norm(term);if(!q)return [];
@@ -18,32 +17,21 @@ export function runSearch(term){
   }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,'zh-CN'));
 }
 export function suggestions(term){
-  const q=(term||'').trim(),n=norm(q),stage=plotStage();let base=[];
+  const q=(term||'').trim(),n=norm(q);let base=[];
   if(!q)base=['2026 秋季返校安排','校车班次与候车点','住宿服务','校园广场'];
   else if(/返校异常|旧系统|旧索引/.test(q))base=['旧返校系统历史数据迁移说明','2022 旧返校记录','旧平台公开归档'];
-  else if(/2022/.test(q))base=['2022 高三提前返校安排','2022 高三（4）班 返校','2022 校园广场','2022 返校通知'];
-  else if(/林晚|晚点回|^林$/.test(q))base=stage>=5?['林晚 2022 校园广场','晚点回','林晚 雷雨','林* 接驳']:['林晚 2022 校园广场','晚点回','林晚 雷雨'];
-  else if(/2019|周岑|门禁/.test(q))base=stage>=4?['周岑 2019 校园广场','2019 门禁','2019 学籍状态','周岑 删除回复']:['周岑 2019 校园广场','2019 门禁','2019 学籍状态'];
+  else if(/2022/.test(q))base=['2022 高三提前返校安排','2022 校园广场','2022 返校通知'];
+  else if(/林晚|晚点回|^林$/.test(q))base=['林晚 2022 校园广场','晚点回','林晚 雷雨'];
+  else if(/2019|周岑|门禁/.test(q))base=['周岑 2019 校园广场','2019 门禁','2019 学籍状态'];
   else if(/2017|陈嘉树|值班表/.test(q))base=['陈嘉树 2017 校园广场','2017 旧值班表','2017 学籍状态'];
-  else if(/补充核验|复核|访问质量|关注/.test(q) && stage>=3)base=stage>=6?['访问质量复核','学生事务补充核验','学生发展支持服务年度合作摘要']:['访问质量复核','学生服务访问质量抽样摘要'];
-  else if(/抽样|兼容|失效标题|删除占位/.test(q) && hasFlag('viewedAttentionCache'))base=['历史检索兼容性抽样说明','失效标题 删除占位'];
-  else if(/青岚|成长实践|学生发展中心|合作单位/.test(q) && stage>=3)base=stage>=4?['青岚青少年成长实践中心','学生发展支持合作服务说明','青岚 接驳','青岚 2019']:['青岚青少年成长实践中心','学生发展支持合作服务说明'];
-  else if(/接驳|校车03|校车 03|车辆调度/.test(q) && stage>=4)base=['8 月 31 日学生事务接驳车辆调度摘要','青岚青少年成长实践中心'];
-  else if(/事故|无生命体征|夜间观察|夜间支持/.test(q) && stage>=4)base=['夜间支持事项处置记录 2019','2019 学籍状态调整'];
-  else if(/辰序|服务采购|合作摘要|人工复核/.test(q) && stage>=4)base=['学生发展支持服务年度合作摘要','学生发展支持合作服务说明'];
+  else if(/补充核验|复核|访问质量|关注/.test(q))base=['学生事务公开资料','历史检索兼容性说明'];
+  else if(/抽样|兼容|失效标题|删除占位/.test(q))base=['历史检索兼容性抽样说明','旧索引迁移说明'];
+  else if(/青岚|成长实践|学生发展中心|合作单位/.test(q))base=['青岚青少年成长实践中心','学生发展支持合作服务说明'];
+  else if(/接驳|校车03|校车 03|车辆调度/.test(q))base=['学生事务接驳车辆调度','合作学校校车'];
+  else if(/事故|无生命体征|夜间观察|夜间支持/.test(q))base=['夜间支持事项','2019 学籍状态调整'];
+  else if(/辰序|服务采购|合作摘要|人工复核/.test(q))base=['学生发展支持服务年度合作摘要','学生发展支持合作服务说明'];
   else if(finalChoice()&&/0724|2026学籍|学籍异常|未归并/.test(q))base=['旧校园广场字符集缓存 未归并','为什么 2026 有个学生的学籍记录有两个版本'];
   else base=index.filter(allowed).filter(x=>norm(x.title).includes(n)||norm(x.keywords).includes(n)).slice(0,5).map(x=>x.title);
-
-  // Faults are rare and tied to cached historical strings; they never mark an answer as correct.
-  if(stage>=2&&!hasFlag('glitchLostWordSeen')&&/林晚|晚点回|^林$/.test(q)){
-    flag('glitchLostWordSeen');base.unshift('林晚 失▒');
-  }
-  if(stage>=3&&!hasFlag('glitchReviewWarningSeen')&&/综合|补充核验|复核/.test(q)){
-    flag('glitchReviewWarningSeen');base.unshift('不要去综合服▒楼');
-  }
-  if(stage>=5&&!hasFlag('glitchCenterWarningSeen')&&/青岚|接驳/.test(q)){
-    flag('glitchCenterWarningSeen');base.unshift('青岚 接▒记录');
-  }
   return [...new Set(base)].slice(0,6);
 }
 export function remember(term){pushSearch(term)}

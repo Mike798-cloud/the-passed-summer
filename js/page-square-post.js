@@ -13,16 +13,17 @@ import {revealGlitch,showSanEvent} from './anomaly.js';
  if(id==='post_2022_return_data')flag('viewedLinInvestigation');
  if(id==='post_0830_hw')flag('viewedLateReply');
  if(id==='post_0829_a')flag('viewedCatPost');
+ if(id==='post_2022_saltwater_wait')flag('viewedSaltwaterWait');
  if(id==='post_2027_two_versions')flag('viewed2027Thread');
  const env=environmentSnapshot(),authorMeta=p.realname?`${p.realname} / ${p.class}`:'公开校园账户',postYear=p.date.slice(0,4),catVariant=id==='post_0829_a'?'cat-1.jpg':null,image=p.image?`assets/img/${catVariant||p.image}`:null,effectiveBody=new Set(p.effectiveBody||[]),effectiveReplies=new Set(p.effectiveReplies||[]);
  const authorSearch=`square.html?year=${encodeURIComponent(postYear)}&month=${encodeURIComponent(p.date.slice(5,7))}&q=${encodeURIComponent(p.author)}`;
  const related={
    post_0829_a:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">该账户还有其他公开主题。旧平台不提供私人消息与关注关系。</p><div class="related-links"><a href="${authorSearch}">查看“晚点回”的公开主题与回复</a></div></div>`,
    post_2026_old_return_list:`<div class="related-panel restrained"><h3>旧平台说明</h3><p class="source-note">旧索引偶尔会命中已迁移标题；信息中心建议重新检索或查看迁移说明。</p><div class="related-links"><a href="migration.html">查看旧平台迁移说明</a></div></div>`,
-   post_2022_return_data:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">这条主题没有附带核验材料。若要确认帖子里提到的“都到齐”，可按年份、班级或返校日期交叉检索公开业务资料。</p><div class="related-links"><a href="${authorSearch}">查看“晚点回”的公开主题与回复</a><a href="search.html?q=${encodeURIComponent('2022 高三（4）班 返校')}">按“2022 / 高三（4）班 / 返校”检索</a><a href="search.html?q=${encodeURIComponent('门禁 旧帖')}">按回复里出现的“门禁旧帖”检索</a></div></div>`,
-   post_0830_hw:`<div class="related-panel restrained"><h3>同日公开内容</h3><p class="source-note">这是一条普通作业帖，但回复时间与返校业务发生在同一天。可返回作者公开主题，或按班级与日期继续检索。</p><div class="related-links"><a href="square.html?year=2022&month=08&q=${encodeURIComponent('晚点回')}">查看“晚点回”的公开主题</a><a href="search.html?q=${encodeURIComponent('2022 高三（4）班 返校')}">检索同日返校资料</a></div></div>`,
-   post_2019_gate_archive:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">同一公开账户此前也发过几条与时间有关的普通主题。</p><div class="related-links"><a href="${authorSearch}">查看周岑的其他公开主题</a><a href="search.html?q=${encodeURIComponent('2019 学籍 状态')}">检索同年度公开状态</a></div></div>`,
-   post_2017_versions:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">同一账户的其他公开主题仍在2017归档中。</p><div class="related-links"><a href="${authorSearch}">查看陈嘉树的其他公开主题</a><a href="search.html?q=${encodeURIComponent('2017 学籍 状态')}">检索同年度公开状态</a></div></div>`,
+   post_2022_return_data:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">这条主题没有附带核验材料。旧平台只保留作者公开发表过的主题与回复。</p><div class="related-links"><a href="${authorSearch}">查看“晚点回”的公开主题与回复</a><a href="search.html">打开站内搜索</a></div></div>`,
+   post_0830_hw:`<div class="related-panel restrained"><h3>同日公开内容</h3><p class="source-note">这是一条普通作业帖。旧平台不替用户判断帖子与校务资料之间是否有关。</p><div class="related-links"><a href="square.html?year=2022&month=08&q=${encodeURIComponent('晚点回')}">查看“晚点回”的公开主题</a><a href="search.html">打开站内搜索</a></div></div>`,
+   post_2019_gate_archive:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">同一公开账户此前也发过几条与时间有关的普通主题。</p><div class="related-links"><a href="${authorSearch}">查看周岑的其他公开主题</a><a href="search.html">打开站内搜索</a></div></div>`,
+   post_2017_versions:`<div class="related-panel restrained"><h3>公开账户</h3><p class="source-note">同一账户的其他公开主题仍在2017归档中。</p><div class="related-links"><a href="${authorSearch}">查看陈嘉树的其他公开主题</a><a href="search.html">打开站内搜索</a></div></div>`,
    post_2017_normal:`<div class="related-panel restrained"><h3>同作者公开主题</h3><div class="related-links"><a href="${authorSearch}">查看陈嘉树的公开主题列表</a></div></div>`,
    post_2017_schedule:`<div class="related-panel restrained"><h3>同作者公开主题</h3><div class="related-links"><a href="${authorSearch}">查看陈嘉树的公开主题列表</a></div></div>`,
    post_2019_normal:`<div class="related-panel restrained"><h3>同作者公开主题</h3><div class="related-links"><a href="${authorSearch}">查看周岑的公开主题列表</a></div></div>`,

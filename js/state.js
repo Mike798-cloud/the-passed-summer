@@ -80,24 +80,21 @@ export function attentionSnapshot(){
   const people=(f.viewedInvestigator2017?1:0)+(f.viewedInvestigator2019?1:0)+(f.viewedLateReply?1:0);
   const repeat=Math.max(0,(v.square_post_hook||0)-1)+Math.max(0,(v.square_post_2019||0)-1);
   const external=(v.center_public||0)+(f.viewedCenterIncident2019?1:0)+(f.viewedLinTransfer2022?1:0);
-  const score=Math.min(99,8+history*5+forum*3+searches*4+people*9+repeat*4+external*5+(f.viewedArrival47?6:0)+(f.viewedRollcall47?6:0)+(f.viewedSamplingProtocol?10:0));
-  return {history,forum,searches,people,repeat,external,score};
+  return {history,forum,searches,people,repeat,external};
 }
 
 export function plotStage(){
   const f=flags();
   if(finalChoice())return 8;
   let s=0;
-  const entered=currentReturnSubmitted()&&(f.viewedCatPost||f.viewedLinInvestigation||f.viewedSquareHook||f.searched2022||f.searchedLinWan);
+  const entered=currentReturnSubmitted()&&(f.viewedCatPost||f.viewedLinInvestigation||f.viewedSquareHook||f.viewedSaltwaterWait||f.viewedLinDraft||f.searched2022||f.searchedLinWan);
   if(entered)s=1;
-  // 2022 核心矛盾：本人 23:18 仍称未返校，并至少命中一份独立返校/点名来源。
+  // 阶段只改变环境氛围，不再决定公开页面能否被搜索或打开。
   const countEvidence=!!(f.viewedArrival47||f.viewedRollcall47||f.viewedOfficial48||f.viewedOldIndex);
   if(s>=1&&f.viewedLateReply&&countEvidence)s=2;
-  // 前人轨迹不再要求 2017、2019 两条线全部看完；任一条形成“公开状态与最后调查不一致”即可继续。
   const prior2017=!!(f.viewedInvestigator2017&&(f.viewedStatus2017||f.searched2017));
   const prior2019=!!(f.viewedInvestigator2019&&(f.viewedStatus2019||f.searched2019));
   if(s>=2&&(prior2017||prior2019|| (f.viewedInvestigator2017&&f.viewedInvestigator2019)))s=3;
-  // 青岚从前人轨迹自然浮出，访问质量抽样改为可选支线，不再卡主线。
   if(s>=3&&(f.viewedCenterPublic||f.viewedCenterCooperation||f.searchedCenter||f.viewedDeletedCache2019))s=4;
   if(s>=4&&f.viewedCenterServiceChain&&(f.viewedCenterIncident2019||f.viewedLinTransfer2022))s=5;
   if(s>=5&&f.viewedCenterIncident2019&&f.viewedLinTransfer2022)s=6;
@@ -109,7 +106,8 @@ export function reviewReady(){
   const f=flags();
   const core2022=!!f.viewedLateReply&&!!(f.viewedArrival47||f.viewedRollcall47||f.viewedOfficial48||f.viewedOldIndex);
   const prior=!!((f.viewedInvestigator2019&&(f.viewedStatus2019||f.viewedDeletedCache2019))||(f.viewedInvestigator2017&&f.viewedStatus2017)||f.viewedDeletedCache2019);
-  return currentReturnSubmitted() && core2022 && prior && !!f.viewedCenterPublic && !!f.viewedCenterServiceChain && !!f.viewedCenterIncident2019 && !!f.viewedLinTransfer2022;
+  const humanTrace=!!(f.viewedCatPost||f.viewedLinInvestigation||f.viewedSaltwaterWait||f.viewedLinDraft);
+  return currentReturnSubmitted() && humanTrace && core2022 && prior && !!f.viewedCenterPublic && !!f.viewedCenterServiceChain && !!f.viewedCenterIncident2019 && !!f.viewedLinTransfer2022;
 }
 
 // 18:40 与 8 月 31 日 24:00 都是剧情时间锚点，不读取玩家设备真实时间。

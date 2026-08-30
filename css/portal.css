@@ -24,3 +24,7 @@
 /* v2.9 center public media strip */
 .center-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.center-gallery figure{margin:0;border:1px solid #d9e0dd;background:#f8faf9}.center-gallery img{display:block;width:100%;height:150px;object-fit:cover;filter:saturate(.72) contrast(.94)}.center-gallery figcaption{padding:8px 10px;color:#5d6d67;font-size:.78rem;border-top:1px solid #e0e5e2}.center-site .center-gallery figure:last-child img{filter:saturate(.58) contrast(.96) brightness(.9)}
 @media(max-width:760px){.center-gallery{grid-template-columns:1fr}.center-gallery img{height:190px}}
+
+/* Reading-led story fragments use the restrained typography of an exported school archive. */
+.memory-fragment{position:relative;overflow:hidden;border-color:#d8d3c7;background:#fbfaf6;padding-left:34px}.memory-fragment::before{content:"";position:absolute;left:15px;top:0;bottom:0;border-left:1px solid #c9d5d8}.memory-fragment p{max-width:48rem;margin:10px 0;font-family:"Songti SC",SimSun,serif;font-size:1rem;line-height:1.9;color:#3f4749}.memory-fragment .muted{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.02em}
+@media(max-width:640px){.memory-fragment{padding-left:27px}.memory-fragment::before{left:12px}.memory-fragment p{font-size:.95rem;line-height:1.82}}

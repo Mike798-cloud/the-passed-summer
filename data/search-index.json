@@ -72,11 +72,11 @@
     "weight": 4
   },
   {
-    "title": "学生服务访问质量抽样摘要（历史缓存）",
-    "summary": "旧索引兼容测试中使用的访问统计字段摘要，缓存附件未包含完整说明。",
+    "title": "旧索引回退命中样本（历史缓存）",
+    "summary": "旧平台迁移测试中留下的三条匿名命中样本，附件没有保留完整说明。",
     "url": "history-detail.html?id=hist_attention_cache",
     "section": "校史检索",
-    "keywords": "2024-11-18 信息中心历史缓存 系统附件 学生服务访问质量抽样摘要（历史缓存） 访问质量 关注指数 attention_index 补充核验 C*** Z*** L***",
+    "keywords": "2024-11-18 信息中心历史缓存 系统附件 旧索引 回退命中样本 legacy_path cache_state C*** Z*** L***",
     "weight": 4,
     "minStage": 3,
     "effective": true
@@ -874,5 +874,22 @@
     "section": "校园广场",
     "url": "square-post.html?id=post_2022_alarm2",
     "weight": 2
+  },
+  {
+    "title": "冰箱里那瓶还给谁留着",
+    "summary": "贴着名字，没人来拿。",
+    "keywords": "2022-08-31 校园日常 盐汽水 晚点回 林晚 冰箱 盐汽水 便利贴 明天回来",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2022_saltwater_wait",
+    "weight": 2
+  },
+  {
+    "title": "账户“晚点回”跨端草稿同步残页",
+    "summary": "旧论坛迁移索引保留的一段未发布草稿，正文在自动同步后六分钟停止更新。",
+    "keywords": "2022-08-31 09:14 旧校园广场 迁移缓存 未发送草稿 晚点回 林晚 综合服务楼 妈妈 校门 盐汽水",
+    "section": "校史检索",
+    "url": "history-detail.html?id=hist_lin_draft_2022",
+    "weight": 4,
+    "effective": true
   }
 ]
