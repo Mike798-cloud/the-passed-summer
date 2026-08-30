@@ -117,9 +117,9 @@ export const Paywall={
 
 export function maybeAutoSupport(){
   if(Paywall.hasPaid()||get(AUTO_KEY,false))return false;
-  // 先让玩家完成真实返校办理，并完成 2022 第一轮矛盾核对后再出现；避开开场钩子与 47/48 第一次认知反转。
+  // 先让玩家完成真实返校办理，并完成 2022 第一轮矛盾核对后再出现；避开猫图开场钩子与 47/48 第一次认知反转。
   if(!currentReturnSubmitted())return false;
-  if(!(hasFlag('viewedSquareHook')&&hasFlag('viewedLateReply')&&(hasFlag('viewedArrival47')||hasFlag('viewedRollcall47'))))return false;
+  if(!((hasFlag('viewedCatPost')||hasFlag('viewedLinInvestigation')||hasFlag('viewedSquareHook'))&&hasFlag('viewedLateReply')&&(hasFlag('viewedArrival47')||hasFlag('viewedRollcall47'))))return false;
   if(plotStage()>=4)return false; // 阴谋核心揭露之后不再主动打断，只保留页脚手动入口。
   set(AUTO_KEY,true);
   setTimeout(()=>Paywall.show(),900);

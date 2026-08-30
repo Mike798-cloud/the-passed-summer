@@ -9,3 +9,45 @@ html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after
 
 /* restrained archival/rendering faults: no red horror template, no full-screen distortion */
 .deleted-reply{position:relative;background:#fafbfb;border-left:3px solid #c8d0d5;color:#6b7780}.deleted-reply .reply-meta{opacity:.78}.glitch-fragment{position:relative;display:inline-block;font-family:SimSun,"Courier New",monospace;letter-spacing:.07em;color:#45545f;transform:skewX(-2deg);filter:contrast(1.08)}.glitch-fragment::after{content:attr(data-text);position:absolute;left:1px;top:0;opacity:.23;clip-path:inset(48% 0 0 0);transform:translateX(-1px);pointer-events:none}.suggestion-glitch{font-family:SimSun,"Courier New",monospace!important;letter-spacing:.035em}.glitch-button{font-family:SimSun,"Courier New",monospace!important;letter-spacing:.08em!important;box-shadow:inset 0 0 0 1px #aab4bb!important}.reduced-motion .glitch-fragment,.reduced-motion .glitch-button{transform:none;filter:none}.reduced-motion .glitch-fragment::after{display:none}
+
+/* v2.8 atmosphere pass: the portal stays credible, while the environment slowly loses stability. */
+body[data-atmosphere="2"]{--page-tint:#edf1f3}
+body[data-atmosphere="3"]{--page-tint:#ebeff1}
+body[data-atmosphere="4"]{--page-tint:#e8edef}
+body[data-atmosphere="5"]{--page-tint:#e6ebed}
+body[data-atmosphere="6"],body[data-atmosphere="7"],body[data-atmosphere="8"]{--page-tint:#e3e8ea}
+body[data-atmosphere="2"],body[data-atmosphere="3"],body[data-atmosphere="4"],body[data-atmosphere="5"],body[data-atmosphere="6"],body[data-atmosphere="7"],body[data-atmosphere="8"]{background:linear-gradient(#e8edef 0,var(--page-tint,#edf1f4) 170px,var(--page-tint,#edf1f4) 100%)}
+body[data-atmosphere="4"] .hero img,body[data-atmosphere="5"] .hero img{filter:saturate(.62) contrast(.96) brightness(.92)}
+body[data-atmosphere="6"] .hero img,body[data-atmosphere="7"] .hero img,body[data-atmosphere="8"] .hero img{filter:saturate(.48) contrast(.98) brightness(.78)}
+body[data-atmosphere="5"] .school-mark,body[data-atmosphere="6"] .school-mark,body[data-atmosphere="7"] .school-mark,body[data-atmosphere="8"] .school-mark{filter:saturate(.6)}
+body[data-atmosphere="6"] .govbar,body[data-atmosphere="7"] .govbar,body[data-atmosphere="8"] .govbar{background:#eef1f2;color:#606a70}
+body[data-atmosphere="7"] .footer,body[data-atmosphere="8"] .footer{background:#e4e8ea}
+.nav-slip{font-family:SimSun,"Songti SC",serif!important;letter-spacing:.08em}
+
+/* intentionally rare historical renderer failures */
+.legacy-render-site{min-height:100vh;background:#ecefed;color:#2f393e;font-family:Arial,"Microsoft YaHei",sans-serif}
+.legacy-render-root{width:min(980px,calc(100% - 30px));margin:0 auto;padding:9vh 0 12vh}
+.legacy-loading-card{min-height:520px;background:#f8f8f5;border:1px solid #bfc6c7;box-shadow:0 1px 8px rgba(30,40,45,.08);padding:22px 26px;overflow:hidden;position:relative}
+.legacy-system-line{font-size:.74rem;color:#758087;border-bottom:1px solid #d6dbda;padding-bottom:8px;margin-bottom:18px}
+.legacy-loading-card h1{font-family:SimSun,"Songti SC",serif;font-size:1.12rem;font-weight:400;color:#39454a;margin:0 0 28px}
+.legacy-reading,.legacy-blank,.legacy-fallback{min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.legacy-reading span{font-size:.9rem;color:#667277}.legacy-reading small{margin-top:8px;color:#929a9d;font-family:"Courier New",monospace}
+.legacy-blank strong{font-weight:400;color:#535e63;letter-spacing:.04em}.legacy-fallback p{max-width:580px;color:#748087;font-size:.82rem}
+.legacy-distortion{min-height:330px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px 18px;align-content:center;padding:24px 7%;font-family:SimSun,"Songti SC",serif;overflow:hidden}
+.legacy-distortion span{font-size:clamp(1.15rem,2.4vw,2rem);line-height:1.05;color:#30383b;opacity:.68;letter-spacing:.04em;transform:skewX(-1deg) scaleX(.96);filter:blur(.08px);white-space:nowrap}
+.legacy-distortion span:nth-child(3n+1){opacity:.46;letter-spacing:.12em;transform:translate(-8px,3px) skewX(-2deg) scaleX(.88);filter:blur(.24px)}.legacy-distortion span:nth-child(3n+2){opacity:.82;transform:translate(6px,-2px) skewX(1.2deg) scaleX(1.04)}.legacy-distortion span:nth-child(4n+2){font-weight:700}.legacy-distortion span:nth-child(5n){font-style:italic;transform:translate(-3px,5px) scaleX(1.1)}.legacy-distortion span:nth-child(7n){font-family:"Courier New",SimSun,monospace;letter-spacing:.18em;opacity:.58}.legacy-distortion span:nth-child(9n){transform:translateX(-18px) skewX(2deg) scaleX(1.18)}
+.reduced-motion .legacy-distortion span{transform:none!important;filter:none!important;letter-spacing:.03em!important}
+@media(max-width:640px){.legacy-render-root{width:calc(100% - 18px);padding:4vh 0}.legacy-loading-card{min-height:500px;padding:18px 16px}.legacy-distortion{grid-template-columns:repeat(3,1fr);padding:20px 3%;gap:8px}.legacy-distortion span{font-size:1.15rem}}
+.legacy-distortion[hidden],.legacy-blank[hidden],.legacy-fallback[hidden],.legacy-reading[hidden]{display:none!important}
+
+
+/* v2.9 rare renderer fault: repetitive administrative language, not horror-template styling */
+.legacy-distortion{position:relative;background:linear-gradient(rgba(248,248,245,.9),rgba(248,248,245,.94)),repeating-linear-gradient(0deg,transparent 0 27px,rgba(73,86,91,.06) 27px 28px)}
+.legacy-distortion::before{content:"";position:absolute;inset:10% 5%;border-left:1px solid rgba(61,73,78,.12);border-right:1px solid rgba(61,73,78,.06);pointer-events:none;transform:skewX(-.4deg)}
+.legacy-distortion span{position:relative;animation:legacySettle .72s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 18ms)}
+.legacy-distortion span::after{content:attr(data-word);position:absolute;left:.045em;top:.06em;opacity:.14;pointer-events:none;transform:translateX(calc((var(--i) % 3 - 1) * 2px));clip-path:inset(52% 0 0 0)}
+.legacy-distortion span:nth-child(6n){font-size:clamp(.88rem,1.65vw,1.2rem);opacity:.4}.legacy-distortion span:nth-child(8n+3){font-size:clamp(1.35rem,3vw,2.45rem);opacity:.78}.legacy-distortion span:nth-child(11n){writing-mode:vertical-rl;justify-self:center;letter-spacing:.18em}.legacy-distortion span:nth-child(13n){text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:rgba(48,58,62,.28)}
+@keyframes legacySettle{0%{opacity:0;transform:translate(calc((var(--i) % 4 - 2)*7px),calc((var(--i) % 3 - 1)*5px)) scaleX(.84)}65%{opacity:.76}100%{}}
+.reduced-motion .legacy-distortion span{animation:none!important}.reduced-motion .legacy-distortion span::after{display:none}
+body[data-atmosphere="6"] .campus-photo img,body[data-atmosphere="7"] .campus-photo img,body[data-atmosphere="8"] .campus-photo img{filter:saturate(.5) contrast(.98) brightness(.82)}
+body[data-atmosphere="7"] .forum-shell,body[data-atmosphere="8"] .forum-shell{box-shadow:0 1px 8px rgba(31,45,52,.09)}

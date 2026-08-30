@@ -1,4 +1,4 @@
-const VERSION = 7;
+const VERSION = 8;
 const PREFIX = 'ql-return-v4:';
 const memory = new Map();
 
@@ -76,7 +76,9 @@ export function plotStage(){
   const f=flags();
   if(finalChoice())return 8;
   let s=0;
-  if(currentReturnSubmitted()&&(f.viewedSquareHook||f.searchedAuditTerms||f.viewedLinInvestigation))s=1;
+  // 入口从“系统异常名单”改成对林晚本人产生好奇：玩家先认识一个人，再发现她查过旧数据。
+  if(currentReturnSubmitted()&&(f.viewedCatPost||f.viewedLinInvestigation||f.viewedSquareHook||f.searched2022))s=1;
+  // 第一轮硬证据仍要求玩家自己找到物理到校/晚点名中的 47，并看到 23:18 的公开自述。
   if(s>=1&&(f.viewedArrival47||f.viewedRollcall47)&&f.viewedLateReply)s=2;
   if(s>=2&&f.viewedInvestigator2017&&f.viewedInvestigator2019&&(f.viewedStatus2017||f.viewedStatus2019))s=3;
   if(s>=3&&f.viewedAttentionCache&&f.viewedSamplingProtocol)s=4;
@@ -85,16 +87,49 @@ export function plotStage(){
   if(s>=6&&f.openedReview&&reviewReady())s=7;
   return s;
 }
-export function anomalyLevel(){return Math.min(4,plotStage())}
+
+// 氛围级别比剧情门控更细：它只决定时间、天气、在线人数与视觉/听觉状态，不决定谜题答案。
+export function atmosphereStage(){
+  if(finalChoice())return 9;
+  if(!currentReturnSubmitted())return 0;
+  const f=flags(),ps=plotStage();
+  // 氛围只能跟随已经成立的调查阶段，避免玩家通过手输 URL 或随意翻旧年份让天色/在线人数提前跳变。
+  if(ps>=7)return 8;
+  if(ps>=6)return 7;
+  if(ps>=5)return 6;
+  if(ps>=4)return 5;
+  if(ps>=3)return 4;
+  if(ps>=2)return 3;
+  if(ps>=1&&(f.viewedArrival47||f.viewedOfficial48||f.viewedLinInvestigation))return 2;
+  if(ps>=1)return 1;
+  return 0;
+}
+export function environmentSnapshot(){
+  const a=atmosphereStage();
+  const rows=[
+    ['2026-08-30T17:42:00+08:00','阴','326','返校服务正常','校园公共服务开放'],
+    ['2026-08-30T17:53:00+08:00','阴','291','返校服务正常','校园公共服务开放'],
+    ['2026-08-30T18:06:00+08:00','小雨','214','晚间服务开始','部分室外服务转入雨天安排'],
+    ['2026-08-30T18:18:00+08:00','小雨','146','晚间服务','图书馆与教学区仍开放'],
+    ['2026-08-30T18:27:00+08:00','雷阵雨','73','晚间服务','部分窗口停止现场受理'],
+    ['2026-08-30T18:33:00+08:00','雷阵雨','31','夜间值班','常规服务陆续结束'],
+    ['2026-08-30T18:36:00+08:00','雷阵雨','14','夜间值班','仅保留预约与应急事项'],
+    ['2026-08-30T18:39:00+08:00','持续降雨','3','夜间值班','常规接驳已结束'],
+    ['2026-08-30T18:40:00+08:00','持续降雨','2','预约事项','仅处理已创建事项'],
+    ['2026-08-31T08:15:00+08:00','多云转晴','118','返校服务正常','新一日校园服务已恢复']
+  ];
+  const [iso,weather,online,service,note]=rows[Math.min(a,rows.length-1)];
+  return {stage:a,now:new Date(iso),weather,online:Number(online),service,note};
+}
+export function anomalyLevel(){return Math.min(4,Math.max(plotStage(),Math.floor(atmosphereStage()/2)))}
 export function reviewReady(){
   const f=flags();
   return currentReturnSubmitted() && !!(f.viewedArrival47||f.viewedRollcall47) && !!f.viewedLateReply && !!f.viewedInvestigator2017 && !!f.viewedInvestigator2019 && !!(f.viewedStatus2017||f.viewedStatus2019) && !!f.viewedAttentionCache && !!f.viewedSamplingProtocol && !!f.viewedDeletedCache2019 && !!f.viewedCenterPublic && !!f.viewedCenterServiceChain && !!f.viewedCenterIncident2019 && !!f.viewedLinTransfer2022;
 }
 export function hiddenEpilogueReady(){return !!finalChoice()}
 
-const baseTs = Date.parse('2026-08-29T22:18:00+08:00');
 const endTs = Date.parse('2026-09-01T00:00:00+08:00');
-export function simulatedNow(){if(finalChoice())return new Date('2026-08-31T08:15:00+08:00');const elapsed=Math.max(0,Date.now()-get('simStartedAt',Date.now()));return new Date(Math.min(baseTs+elapsed,endTs+60*60*1000))}
+export function simulatedNow(){return environmentSnapshot().now}
 export function countdownInfo(){const now=simulatedNow().getTime(),diff=endTs-now;if(diff<=0)return {expired:true,text:'信息冻结待核验'};const total=Math.floor(diff/60000),d=Math.floor(total/1440),h=Math.floor((total%1440)/60),m=total%60;return {expired:false,text:`剩余 ${d}天 ${h}小时 ${String(m).padStart(2,'0')}分`}}
 
 export function resetAll(){const s=settings();if(backend.name!=='memory'){try{const keys=[];for(let i=0;i<backend.obj.length;i++){const k=backend.obj.key(i);if(k&&k.startsWith(PREFIX))keys.push(k)}keys.forEach(k=>backend.obj.removeItem(k))}catch{}}else memory.clear();seed();set('settings',s)}

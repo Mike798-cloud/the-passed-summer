@@ -20,11 +20,11 @@ export function runSearch(term){
 export function suggestions(term){
   const q=(term||'').trim(),n=norm(q),stage=plotStage();let base=[];
   if(!q)base=['2026 秋季返校安排','校车班次与候车点','住宿服务','校园广场'];
-  else if(/返校异常|旧系统|旧索引/.test(q))base=['2022 旧返校记录','旧返校系统历史数据迁移说明','2019 门禁归档'];
-  else if(/2022/.test(q))base=['2022 高三提前返校安排','2022 到校核验','2022 晚点名','2022 公开校史'];
-  else if(/林晚|晚点回|^林$/.test(q))base=stage>=5?['林晚 2022 校园广场','林晚 雷雨 出门时间','2022 学籍状态调整','林* 学生事务接驳','2022 旧返校记录']:['晚点回 返校记录','林晚 2022 校园广场','林晚 雷雨 出门时间','2022 学籍状态调整'];
-  else if(/2019|周岑|门禁/.test(q))base=stage>=4?['2019 门禁归档时间','周岑 走廊时钟','周岑 删除回复 字符集','2019 学籍状态调整','2017 旧值班表']:['2019 门禁归档时间','周岑 走廊时钟','2019 学籍状态调整','2017 旧值班表'];
-  else if(/2017|陈嘉树|值班表/.test(q))base=['2017 旧值班表','陈嘉树 机器人社','2017 学籍异动公开摘要'];
+  else if(/返校异常|旧系统|旧索引/.test(q))base=['旧返校系统历史数据迁移说明','2022 旧返校记录','旧平台公开归档'];
+  else if(/2022/.test(q))base=['2022 高三提前返校安排','2022 高三（4）班 返校','2022 校园广场','2022 返校通知'];
+  else if(/林晚|晚点回|^林$/.test(q))base=stage>=5?['林晚 2022 校园广场','晚点回','林晚 雷雨','林* 接驳']:['林晚 2022 校园广场','晚点回','林晚 雷雨'];
+  else if(/2019|周岑|门禁/.test(q))base=stage>=4?['周岑 2019 校园广场','2019 门禁','2019 学籍状态','周岑 删除回复']:['周岑 2019 校园广场','2019 门禁','2019 学籍状态'];
+  else if(/2017|陈嘉树|值班表/.test(q))base=['陈嘉树 2017 校园广场','2017 旧值班表','2017 学籍状态'];
   else if(/补充核验|复核|访问质量|关注/.test(q) && stage>=3)base=stage>=6?['访问质量复核','学生事务补充核验','学生发展支持服务年度合作摘要']:['访问质量复核','学生服务访问质量抽样摘要'];
   else if(/抽样|兼容|失效标题|删除占位/.test(q) && hasFlag('viewedAttentionCache'))base=['历史检索兼容性抽样说明','失效标题 删除占位'];
   else if(/青岚|成长实践|学生发展中心/.test(q) && stage>=4)base=stage>=5?['青岚青少年成长实践中心','学生发展支持合作服务说明','青岚 接驳','青岚 夜间支持事项']:['青岚青少年成长实践中心','学生发展支持合作服务说明'];
@@ -36,13 +36,13 @@ export function suggestions(term){
 
   // Faults are rare and tied to cached historical strings; they never mark an answer as correct.
   if(stage>=2&&!hasFlag('glitchLostWordSeen')&&/林晚|晚点回|^林$/.test(q)){
-    flag('glitchLostWordSeen');base.unshift('林晚 失踪');
+    flag('glitchLostWordSeen');base.unshift('林晚 失▒');
   }
   if(stage>=3&&!hasFlag('glitchReviewWarningSeen')&&/综合|补充核验|复核/.test(q)){
-    flag('glitchReviewWarningSeen');base.unshift('不要去综合服务楼');
+    flag('glitchReviewWarningSeen');base.unshift('不要去综合服▒楼');
   }
   if(stage>=5&&!hasFlag('glitchCenterWarningSeen')&&/青岚|接驳/.test(q)){
-    flag('glitchCenterWarningSeen');base.unshift('他们会送你去——');
+    flag('glitchCenterWarningSeen');base.unshift('他们会送你去▒▒');
   }
   return [...new Set(base)].slice(0,6);
 }
