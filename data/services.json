@@ -1,0 +1,58 @@
+[
+  {
+    "id": "return",
+    "title": "返校信息确认",
+    "desc": "住宿、交通、预计到校时间",
+    "url": "my-return.html",
+    "icon": "icon-form.svg"
+  },
+  {
+    "id": "bus",
+    "title": "校车服务",
+    "desc": "班次、候车点、核验说明",
+    "url": "notice.html?id=2026-bus",
+    "icon": "icon-bus.svg"
+  },
+  {
+    "id": "dorm",
+    "title": "住宿服务",
+    "desc": "床位、热水、维修",
+    "url": "dorm.html",
+    "icon": "icon-dorm.svg"
+  },
+  {
+    "id": "books",
+    "title": "教材领取",
+    "desc": "分时领取与同步状态",
+    "url": "notice.html?id=2026-books",
+    "icon": "icon-book.svg"
+  },
+  {
+    "id": "arrival",
+    "title": "到校核验",
+    "desc": "现场核验聚合数据",
+    "url": "arrival.html",
+    "icon": "icon-check.svg"
+  },
+  {
+    "id": "square",
+    "title": "校园广场",
+    "desc": "公开话题与旧帖归档",
+    "url": "square.html",
+    "icon": "icon-square.svg"
+  },
+  {
+    "id": "history",
+    "title": "校史检索",
+    "desc": "公开新闻与归档摘要",
+    "url": "history.html",
+    "icon": "icon-archive.svg"
+  },
+  {
+    "id": "migration",
+    "title": "账户迁移",
+    "desc": "历史关联与纠错处理",
+    "url": "migration.html",
+    "icon": "icon-link.svg"
+  }
+]
