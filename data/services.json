@@ -50,8 +50,8 @@
   },
   {
     "id": "migration",
-    "title": "账户迁移",
-    "desc": "历史关联与纠错处理",
+    "title": "账户与历史数据",
+    "desc": "旧平台迁移与公开说明",
     "url": "migration.html",
     "icon": "icon-link.svg"
   }

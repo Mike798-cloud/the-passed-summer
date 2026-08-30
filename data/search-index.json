@@ -4,23 +4,23 @@
     "summary": "8 月 29 日起开放返校信息确认，住宿、交通与预计到校时间需在 8 月 31 日 24:00 前核对。",
     "url": "notice.html?id=2026-main",
     "section": "返校通知",
-    "keywords": "2026 学生处 / 信息中心 关于启用 2026 秋季学期返校服务平台的通知",
-    "weight": 4
+    "keywords": "2026-08-29 学生处 / 信息中心 重要 关于启用 2026 秋季学期返校服务平台的通知",
+    "weight": 3
   },
   {
     "title": "关于 2022 届高三年级提前返校安排的通知",
     "summary": "高三年级于 8 月 30 日提前返校参加开学适应自习，入校须完成到校核验。",
     "url": "notice.html?id=2022-advance",
     "section": "返校通知",
-    "keywords": "2022 高三年级组 关于 2022 届高三年级提前返校安排的通知",
-    "weight": 4
+    "keywords": "2022-08-27 高三年级组 重要 关于 2022 届高三年级提前返校安排的通知",
+    "weight": 3
   },
   {
     "title": "8 月 30 日高三返校值班核验说明",
     "summary": "21:10 晚点名后，请各班继续核对未闭环学生，22:30 前完成安全闭环报送。",
     "url": "notice.html?id=2022-duty",
     "section": "返校通知",
-    "keywords": "2022 年级值班组 8 月 30 日高三返校值班核验说明",
+    "keywords": "2022-08-30 年级值班组  8 月 30 日高三返校值班核验说明",
     "weight": 3
   },
   {
@@ -28,7 +28,7 @@
     "summary": "404、405 等房间因立管更换暂停安排，8 月下旬复查后恢复使用。",
     "url": "notice.html?id=404-repair",
     "section": "返校通知",
-    "keywords": "2022 总务处 暑期学生宿舍 4 号楼给水管检修公告",
+    "keywords": "2022-07-18 总务处  暑期学生宿舍 4 号楼给水管检修公告",
     "weight": 3
   },
   {
@@ -36,7 +36,7 @@
     "summary": "北线增开 18:10 班次，西区候车点临时迁至文化馆东侧。",
     "url": "notice.html?id=2026-bus",
     "section": "返校通知",
-    "keywords": "2026 后勤服务中心 2026 秋季返校校车班次与候车点调整",
+    "keywords": "2026-08-28 后勤服务中心  2026 秋季返校校车班次与候车点调整",
     "weight": 3
   },
   {
@@ -44,7 +44,7 @@
     "summary": "教材按年级分时领取，高二年级 8 月 31 日 14:00 后开放。",
     "url": "notice.html?id=2026-books",
     "section": "返校通知",
-    "keywords": "2026 教务处 教材领取时间与班级分流安排",
+    "keywords": "2026-08-29 教务处  教材领取时间与班级分流安排",
     "weight": 3
   },
   {
@@ -52,7 +52,7 @@
     "summary": "下午可能有短时强降雨，请携带雨具并注意校门口湿滑。",
     "url": "notice.html?id=2026-weather",
     "section": "返校通知",
-    "keywords": "2026 校办 返校期间雷阵雨天气提醒",
+    "keywords": "2026-08-29 校办  返校期间雷阵雨天气提醒",
     "weight": 3
   },
   {
@@ -60,39 +60,85 @@
     "summary": "一食堂 8 月 30 日晚餐起开放，二食堂 8 月 31 日午餐起恢复。",
     "url": "notice.html?id=2026-canteen",
     "section": "返校通知",
-    "keywords": "2026 膳食服务中心 新学期食堂开放时段",
+    "keywords": "2026-08-26 膳食服务中心  新学期食堂开放时段",
     "weight": 3
-  },
-  {
-    "title": "高三年级提前返校工作平稳完成",
-    "summary": "8 月 30 日高三年级按计划提前返校，校园服务和晚间自习正常运行。",
-    "url": "history-detail.html?id=hist_2022_return",
-    "section": "校史检索",
-    "keywords": "2022 校园新闻中心 返校动态 高三年级提前返校工作平稳完成  返校 48 ",
-    "weight": 4
-  },
-  {
-    "title": "2022 秋季返校回执索引（公开摘要）",
-    "summary": "旧返校系统退役归档的班级聚合索引，个人字段按公开规则脱敏。",
-    "url": "history-detail.html?id=hist_2022_index",
-    "section": "校史检索",
-    "keywords": "2022 信息中心归档 旧索引摘要 2022 秋季返校回执索引（公开摘要） 高三4班 0417  ",
-    "weight": 4
-  },
-  {
-    "title": "2022 秋季学籍状态调整信息摘要",
-    "summary": "秋季学籍信息维护完成，部分账户自 9 月起停止在公开在校名单中继续更新。",
-    "url": "history-detail.html?id=hist_status_2022",
-    "section": "校史检索",
-    "keywords": "2022 教务公开信息 学籍公示 2022 秋季学籍状态调整信息摘要   学籍调整 林晚",
-    "weight": 2
   },
   {
     "title": "旧返校系统历史数据迁移说明",
     "summary": "2026 返校平台首次整合旧返校回执，缺少稳定学号的旧记录将生成候选关联并标记跨届冲突。",
     "url": "history-detail.html?id=hist_2026_migration",
     "section": "校史检索",
-    "keywords": "2026 信息中心 系统公示 旧返校系统历史数据迁移说明   ",
+    "keywords": "2026-08-28 信息中心 系统公示 旧返校系统历史数据迁移说明",
+    "weight": 4
+  },
+  {
+    "title": "学生服务访问质量抽样摘要（历史缓存）",
+    "summary": "旧索引兼容测试中使用的访问统计字段摘要，缓存附件未包含完整说明。",
+    "url": "history-detail.html?id=hist_attention_cache",
+    "section": "校史检索",
+    "keywords": "2024-11-18 信息中心历史缓存 系统附件 学生服务访问质量抽样摘要（历史缓存） 访问质量 关注指数 attention_index 补充核验 C*** Z*** L***",
+    "weight": 4,
+    "minStage": 3,
+    "requires": [
+      "viewedInvestigator2017",
+      "viewedInvestigator2019"
+    ],
+    "effective": true
+  },
+  {
+    "title": "历史检索兼容性抽样说明（残页）",
+    "summary": "关于旧索引自然残留、删除占位与回退命中路径的兼容性测试残页。",
+    "url": "history-detail.html?id=hist_sampling_protocol",
+    "section": "校史检索",
+    "keywords": "2024 信息中心历史缓存 历史检索兼容性抽样 旧索引 自然残留 失效标题 删除占位 回退命中 访问路径 复核",
+    "weight": 4,
+    "minStage": 3,
+    "requires": [
+      "viewedAttentionCache"
+    ],
+    "effective": true
+  },
+  {
+    "title": "2022 秋季学籍状态调整信息摘要",
+    "summary": "秋季学籍信息维护完成，部分账户自 9 月起停止在公开在校名单中继续更新。",
+    "url": "history-detail.html?id=hist_status_2022",
+    "section": "校史检索",
+    "keywords": "2022-09-16 教务公开信息 学籍公示 2022 秋季学籍状态调整信息摘要 林晚 家庭原因 暂缓返校",
+    "weight": 4,
+    "effective": true
+  },
+  {
+    "title": "2022 秋季返校回执索引（公开摘要）",
+    "summary": "旧返校系统退役归档的班级聚合索引，个人字段按公开规则脱敏。",
+    "url": "history-detail.html?id=hist_2022_index",
+    "section": "校史检索",
+    "keywords": "2022-08-31 09:20 信息中心归档 旧索引摘要 2022 秋季返校回执索引（公开摘要） 林晚 林* 0724 未完成到校核验 47 48",
+    "weight": 4,
+    "effective": true
+  },
+  {
+    "title": "高三年级提前返校工作平稳完成",
+    "summary": "8 月 30 日高三年级按计划提前返校，校园服务和晚间自习正常运行。",
+    "url": "history-detail.html?id=hist_2022_return",
+    "section": "校史检索",
+    "keywords": "2022-08-30 22:18 校园新闻中心 返校动态 高三年级提前返校工作平稳完成",
+    "weight": 4,
+    "effective": true
+  },
+  {
+    "title": "2021 年科技节优秀作品名单",
+    "summary": "本年度科技节共评选优秀作品 32 项。",
+    "url": "history-detail.html?id=hist_awards_2021",
+    "section": "校史检索",
+    "keywords": "2021-12-06 教务处 公示 2021 年科技节优秀作品名单",
+    "weight": 4
+  },
+  {
+    "title": "秋季开学第一周校园影像",
+    "summary": "开学第一周校园影像资料。",
+    "url": "history-detail.html?id=hist_campus_2020",
+    "section": "校史检索",
+    "keywords": "2020-09-03 校史馆 校园影像 秋季开学第一周校园影像",
     "weight": 4
   },
   {
@@ -100,23 +146,99 @@
     "summary": "旧图书馆一层完成照明、书架与阅读桌椅改造。",
     "url": "history-detail.html?id=hist_campus_2019",
     "section": "校史检索",
-    "keywords": "2019 校史馆 校史 旧图书馆完成阅读空间改造   ",
+    "keywords": "2019-10-10 校史馆 校史 旧图书馆完成阅读空间改造",
+    "weight": 4
+  },
+  {
+    "title": "2019 秋季学籍状态调整摘要",
+    "summary": "部分学生账户按学籍维护流程暂停公开更新。",
+    "url": "history-detail.html?id=hist_status_2019",
+    "section": "校史检索",
+    "keywords": "2019-09-09 教务公开信息 学籍公示 2019 秋季学籍状态调整摘要 周岑 周* 休学",
+    "weight": 4,
+    "effective": true
+  },
+  {
+    "title": "2017 秋季学籍异动公开摘要",
+    "summary": "秋季学籍异动批次已完成，个别账户自生效日起停止在校内公开名单中更新。",
+    "url": "history-detail.html?id=hist_status_2017",
+    "section": "校史检索",
+    "keywords": "2017-09-12 教务公开信息 学籍公示 2017 秋季学籍异动公开摘要 陈嘉树 陈* 转学 转出",
+    "weight": 4,
+    "effective": true
+  },
+  {
+    "title": "旧值班表为什么有两个版本",
+    "summary": "同一份学生事务值班表，校内搜索缓存和归档页的名单不一样。",
+    "url": "square-post.html?id=post_2017_versions",
+    "section": "校园广场",
+    "keywords": "2017-09-04 17:42 校园事务 陈嘉树   旧值班表为什么有两个版本 2017 值班表 两个版本 补充核验 陈嘉树",
+    "weight": 2,
+    "effective": true
+  },
+  {
+    "title": "门禁归档时间是不是错了",
+    "summary": "旧门禁归档里有一条时间早于本人到校记录，想确认是不是历史同步问题。",
+    "url": "square-post.html?id=post_2019_gate_archive",
+    "section": "校园广场",
+    "keywords": "2019-09-06 18:07 系统使用 周岑   门禁归档时间是不是错了 2019 门禁 归档 补充核验 综合服务楼 周岑 2017值班表",
+    "weight": 2,
+    "effective": true
+  },
+  {
+    "title": "返校后第一周观测活动取消",
+    "summary": "设备检修，九月中旬再约。",
+    "url": "square-post.html?id=post_club",
+    "section": "校园广场",
+    "keywords": "2022-08-26 19:22 社团 天文社   返校后第一周观测活动取消",
     "weight": 2
   },
   {
-    "title": "2021 年科技节优秀作品名单",
-    "summary": "本年度科技节共评选优秀作品 32 项。",
-    "url": "history-detail.html?id=hist_awards_2021",
-    "section": "校史检索",
-    "keywords": "2021 教务处 公示 2021 年科技节优秀作品名单   ",
+    "title": "返校当天一定要穿长裤吗",
+    "summary": "年级通知只写校服，没写季节款。",
+    "url": "square-post.html?id=post_uniform",
+    "section": "校园广场",
+    "keywords": "2022-08-27 20:51 校服 短袖派   返校当天一定要穿长裤吗",
     "weight": 2
   },
   {
-    "title": "秋季开学第一周校园影像",
-    "summary": "开学第一周校园影像资料。",
-    "url": "history-detail.html?id=hist_campus_2020",
-    "section": "校史检索",
-    "keywords": "2020 校史馆 校园影像 秋季开学第一周校园影像   ",
+    "title": "图书馆一楼晚上开到几点",
+    "summary": "想返校后去把假期最后一点作业写完。",
+    "url": "square-post.html?id=post_library",
+    "section": "校园广场",
+    "keywords": "2022-08-28 16:40 校园 靠窗座位   图书馆一楼晚上开到几点",
+    "weight": 2
+  },
+  {
+    "title": "有人分享不痛苦的早起方法吗",
+    "summary": "假期睡到十点的人还有救吗。",
+    "url": "square-post.html?id=post_alarm",
+    "section": "校园广场",
+    "keywords": "2022-08-28 22:07 日常 六点起不来   有人分享不痛苦的早起方法吗",
+    "weight": 2
+  },
+  {
+    "title": "返校就考试是真的吗",
+    "summary": "别吓我，我还没有完成心理建设。",
+    "url": "square-post.html?id=post_exam",
+    "section": "校园广场",
+    "keywords": "2022-08-29 14:08 学习 假期最后一天   返校就考试是真的吗",
+    "weight": 2
+  },
+  {
+    "title": "今年语文书又厚了",
+    "summary": "新书还没领我已经开始替肩膀担心。",
+    "url": "square-post.html?id=post_books",
+    "section": "校园广场",
+    "keywords": "2022-08-29 16:12 教材 书包太重   今年语文书又厚了",
+    "weight": 2
+  },
+  {
+    "title": "今天的云像要开学",
+    "summary": "下午操场上风很大。",
+    "url": "square-post.html?id=post_photo",
+    "section": "校园广场",
+    "keywords": "2022-08-29 18:33 随手拍 操场边   今天的云像要开学",
     "weight": 2
   },
   {
@@ -124,7 +246,72 @@
     "summary": "“我的暑假正在一点一点没有。”",
     "url": "square-post.html?id=post_0829_a",
     "section": "校园广场",
-    "keywords": "高三闲聊 晚点回 2022 我的暑假正在一点一点没有.jpg 晚点回 林晚 高三4班 高三（4）班",
+    "keywords": "2022-08-29 21:44 高三闲聊 晚点回 林晚 高三（4）班 我的暑假正在一点一点没有.jpg",
+    "weight": 2
+  },
+  {
+    "title": "南门这边下雨了没",
+    "summary": "西门已经开始飘了。",
+    "url": "square-post.html?id=post_rain",
+    "section": "校园广场",
+    "keywords": "2022-08-30 15:10 天气 没带伞   南门这边下雨了没",
+    "weight": 2
+  },
+  {
+    "title": "西门现在队伍到哪了",
+    "summary": "刚从门口进来，家长车别在正门停太久。",
+    "url": "square-post.html?id=post_gate",
+    "section": "校园广场",
+    "keywords": "2022-08-30 16:04 返校交通 西门排队人   西门现在队伍到哪了",
+    "weight": 2
+  },
+  {
+    "title": "北线校车今天堵了多久",
+    "summary": "堵在桥上快二十分钟，下车核验排队倒挺快。",
+    "url": "square-post.html?id=post_bus",
+    "section": "校园广场",
+    "keywords": "2022-08-30 17:28 返校交通 北线乘客   北线校车今天堵了多久",
+    "weight": 2
+  },
+  {
+    "title": "宿舍一楼饮水机开了吗",
+    "summary": "四号楼一楼已经开了，热水稍慢。",
+    "url": "square-post.html?id=post_thermos",
+    "section": "校园广场",
+    "keywords": "2022-08-30 18:03 宿舍 忘带杯子   宿舍一楼饮水机开了吗",
+    "weight": 2
+  },
+  {
+    "title": "第一天晚饭居然有糖醋排骨",
+    "summary": "别问，问就是我已经排第二次了。",
+    "url": "square-post.html?id=post_meal",
+    "section": "校园广场",
+    "keywords": "2022-08-30 18:44 吃饭 一食堂观察员   第一天晚饭居然有糖醋排骨",
+    "weight": 2
+  },
+  {
+    "title": "旧返校记录怎么还有“未完成”状态",
+    "summary": "搜返校通知时看到一条旧索引摘要，班级状态和新闻里写的不太一样。",
+    "url": "square-post.html?id=post_2022_return_data",
+    "section": "校园广场",
+    "keywords": "2022-08-30 18:55 系统使用 晚点回 林晚 高三（4）班 旧返校记录怎么还有“未完成”状态 返校异常名单 旧返校记录 未完成 2019门禁 林晚 晚点回",
+    "weight": 2,
+    "effective": true
+  },
+  {
+    "title": "404 暑假一直封着，是不是出过事？",
+    "summary": "回学校路过 4 号楼，404 门上还贴着检修纸。",
+    "url": "square-post.html?id=post_404_rumor",
+    "section": "校园广场",
+    "keywords": "2022-08-30 19:36 宿舍闲聊 住四楼的人   404 暑假一直封着，是不是出过事？",
+    "weight": 2
+  },
+  {
+    "title": "旧实验楼返校当天有人被锁了一夜？",
+    "summary": "听上一届说返校那天旧实验楼锁过人。",
+    "url": "square-post.html?id=post_oldlab",
+    "section": "校园广场",
+    "keywords": "2022-08-30 20:12 校园怪谈 一楼值日生   旧实验楼返校当天有人被锁了一夜？",
     "weight": 2
   },
   {
@@ -132,168 +319,65 @@
     "summary": "救命，第 18 题最后那个参数范围我算了三遍都不一样。",
     "url": "square-post.html?id=post_0830_hw",
     "section": "校园广场",
-    "keywords": "作业互助 纸飞机 2022 数学卷第 18 题有人会吗 晚点回 林晚 高三4班 高三（4）班",
-    "weight": 2
-  },
-  {
-    "title": "404 暑假一直封着，是不是出过事？",
-    "summary": "回学校路过 4 号楼，404 门上还贴着检修纸。",
-    "url": "square-post.html?id=post_404_rumor",
-    "section": "校园广场",
-    "keywords": "宿舍闲聊 住四楼的人 2022 404 暑假一直封着，是不是出过事？",
-    "weight": 1
-  },
-  {
-    "title": "旧实验楼返校当天有人被锁了一夜？",
-    "summary": "听上一届说返校那天旧实验楼锁过人。",
-    "url": "square-post.html?id=post_oldlab",
-    "section": "校园广场",
-    "keywords": "校园怪谈 一楼值日生 2022 旧实验楼返校当天有人被锁了一夜？",
-    "weight": 1
-  },
-  {
-    "title": "北线校车今天堵了多久",
-    "summary": "堵在桥上快二十分钟，下车核验排队倒挺快。",
-    "url": "square-post.html?id=post_bus",
-    "section": "校园广场",
-    "keywords": "返校交通 北线乘客 2022 北线校车今天堵了多久",
-    "weight": 1
-  },
-  {
-    "title": "第一天晚饭居然有糖醋排骨",
-    "summary": "别问，问就是我已经排第二次了。",
-    "url": "square-post.html?id=post_meal",
-    "section": "校园广场",
-    "keywords": "吃饭 一食堂观察员 2022 第一天晚饭居然有糖醋排骨",
-    "weight": 1
-  },
-  {
-    "title": "今年语文书又厚了",
-    "summary": "新书还没领我已经开始替肩膀担心。",
-    "url": "square-post.html?id=post_books",
-    "section": "校园广场",
-    "keywords": "教材 书包太重 2022 今年语文书又厚了",
-    "weight": 1
-  },
-  {
-    "title": "有人分享不痛苦的早起方法吗",
-    "summary": "假期睡到十点的人还有救吗。",
-    "url": "square-post.html?id=post_alarm",
-    "section": "校园广场",
-    "keywords": "日常 六点起不来 2022 有人分享不痛苦的早起方法吗",
-    "weight": 1
-  },
-  {
-    "title": "南门这边下雨了没",
-    "summary": "西门已经开始飘了。",
-    "url": "square-post.html?id=post_rain",
-    "section": "校园广场",
-    "keywords": "天气 没带伞 2022 南门这边下雨了没",
-    "weight": 1
-  },
-  {
-    "title": "返校当天一定要穿长裤吗",
-    "summary": "年级通知只写校服，没写季节款。",
-    "url": "square-post.html?id=post_uniform",
-    "section": "校园广场",
-    "keywords": "校服 短袖派 2022 返校当天一定要穿长裤吗 晚点回 林晚 高三4班 高三（4）班",
-    "weight": 1
-  },
-  {
-    "title": "返校后第一周观测活动取消",
-    "summary": "设备检修，九月中旬再约。",
-    "url": "square-post.html?id=post_club",
-    "section": "校园广场",
-    "keywords": "社团 天文社 2022 返校后第一周观测活动取消",
-    "weight": 1
-  },
-  {
-    "title": "宿舍一楼饮水机开了吗",
-    "summary": "四号楼一楼已经开了，热水稍慢。",
-    "url": "square-post.html?id=post_thermos",
-    "section": "校园广场",
-    "keywords": "宿舍 忘带杯子 2022 宿舍一楼饮水机开了吗",
-    "weight": 1
-  },
-  {
-    "title": "返校就考试是真的吗",
-    "summary": "别吓我，我还没有完成心理建设。",
-    "url": "square-post.html?id=post_exam",
-    "section": "校园广场",
-    "keywords": "学习 假期最后一天 2022 返校就考试是真的吗",
-    "weight": 1
-  },
-  {
-    "title": "今天的云像要开学",
-    "summary": "下午操场上风很大。",
-    "url": "square-post.html?id=post_photo",
-    "section": "校园广场",
-    "keywords": "随手拍 操场边 2022 今天的云像要开学",
-    "weight": 1
-  },
-  {
-    "title": "图书馆一楼晚上开到几点",
-    "summary": "想返校后去把假期最后一点作业写完。",
-    "url": "square-post.html?id=post_library",
-    "section": "校园广场",
-    "keywords": "校园 靠窗座位 2022 图书馆一楼晚上开到几点",
-    "weight": 1
-  },
-  {
-    "title": "西门现在队伍到哪了",
-    "summary": "刚从门口进来，家长车别在正门停太久。",
-    "url": "square-post.html?id=post_gate",
-    "section": "校园广场",
-    "keywords": "返校交通 西门排队人 2022 西门现在队伍到哪了",
-    "weight": 1
-  },
-  {
-    "title": "西区候车点今年是不是挪了",
-    "summary": "看通知说挪到文化馆东侧，老地方今天已经没有牌子了。",
-    "url": "square-post.html?id=post_2026_busstop",
-    "section": "校园广场",
-    "keywords": "返校交通 高二三班路过 2026 西区候车点今年是不是挪了",
-    "weight": 1
-  },
-  {
-    "title": "高二教材什么时候能领",
-    "summary": "系统显示 31 号 14:00 后开放，是按班级去吗？",
-    "url": "square-post.html?id=post_2026_books",
-    "section": "校园广场",
-    "keywords": "教材 书包又重了 2026 高二教材什么时候能领",
-    "weight": 1
-  },
-  {
-    "title": "4 号楼热水复验结束了吗",
-    "summary": "看到服务页写已完成，想确认下晚上是不是正常开。",
-    "url": "square-post.html?id=post_2026_dorm",
-    "section": "校园广场",
-    "keywords": "宿舍 四号楼新住户 2026 4 号楼热水复验结束了吗",
-    "weight": 1
-  },
-  {
-    "title": "31 号真的还有雷阵雨吗",
-    "summary": "每年返校都在下雨这件事是不是固定节目。",
-    "url": "square-post.html?id=post_2026_rain",
-    "section": "校园广场",
-    "keywords": "天气 又忘带伞 2026 31 号真的还有雷阵雨吗",
-    "weight": 1
-  },
-  {
-    "title": "返校第一顿吃什么投票",
-    "summary": "希望糖醋排骨还能活着回来。",
-    "url": "square-post.html?id=post_2026_canteen",
-    "section": "校园广场",
-    "keywords": "吃饭 一食堂观察员26 2026 返校第一顿吃什么投票",
-    "weight": 1
+    "keywords": "2022-08-30 22:51 作业互助 纸飞机   数学卷第 18 题有人会吗 林晚 23:18 我还没回学校 明天上午再去",
+    "weight": 2,
+    "effective": true
   },
   {
     "title": "九月第一次观测招新",
     "summary": "返校后第一周先做设备检查，正式观测时间另发。",
     "url": "square-post.html?id=post_2026_club",
     "section": "校园广场",
-    "keywords": "社团 新天文社 2026 九月第一次观测招新",
-    "weight": 1
+    "keywords": "2026-08-29 15:06 社团 新天文社   九月第一次观测招新",
+    "weight": 2
+  },
+  {
+    "title": "返校第一顿吃什么投票",
+    "summary": "希望糖醋排骨还能活着回来。",
+    "url": "square-post.html?id=post_2026_canteen",
+    "section": "校园广场",
+    "keywords": "2026-08-29 16:28 吃饭 一食堂观察员26   返校第一顿吃什么投票",
+    "weight": 2
+  },
+  {
+    "title": "31 号真的还有雷阵雨吗",
+    "summary": "每年返校都在下雨这件事是不是固定节目。",
+    "url": "square-post.html?id=post_2026_rain",
+    "section": "校园广场",
+    "keywords": "2026-08-29 17:30 天气 又忘带伞   31 号真的还有雷阵雨吗",
+    "weight": 2
+  },
+  {
+    "title": "4 号楼热水复验结束了吗",
+    "summary": "看到服务页写已完成，想确认下晚上是不是正常开。",
+    "url": "square-post.html?id=post_2026_dorm",
+    "section": "校园广场",
+    "keywords": "2026-08-29 18:55 宿舍 四号楼新住户   4 号楼热水复验结束了吗",
+    "weight": 2
+  },
+  {
+    "title": "高二教材什么时候能领",
+    "summary": "系统显示 31 号 14:00 后开放，是按班级去吗？",
+    "url": "square-post.html?id=post_2026_books",
+    "section": "校园广场",
+    "keywords": "2026-08-29 19:42 教材 书包又重了   高二教材什么时候能领",
+    "weight": 2
+  },
+  {
+    "title": "西区候车点今年是不是挪了",
+    "summary": "看通知说挪到文化馆东侧，老地方今天已经没有牌子了。",
+    "url": "square-post.html?id=post_2026_busstop",
+    "section": "校园广场",
+    "keywords": "2026-08-29 20:18 返校交通 高二三班路过   西区候车点今年是不是挪了",
+    "weight": 2
+  },
+  {
+    "title": "旧系统里那个“返校异常名单”是什么？",
+    "summary": "站内搜索旧返校说明时，结果里闪过一个像“返校异常名单”的旧标题，再搜就没有了。",
+    "url": "square-post.html?id=post_2026_old_return_list",
+    "section": "校园广场",
+    "keywords": "2026-08-29 20:56 系统使用 旧版用户   旧系统里那个“返校异常名单”是什么？ 返校异常名单 旧系统 旧索引 缓存",
+    "weight": 2
   },
   {
     "title": "2022 高三（4）班到校核验汇总",
@@ -301,7 +385,8 @@
     "url": "arrival.html?year=2022&class=3-4",
     "section": "到校核验",
     "keywords": "2022 高三4班 高三（4）班 到校 核验 校车 西门 南门 41 6 0 47 48",
-    "weight": 6
+    "weight": 6,
+    "effective": true
   },
   {
     "title": "2022-08-30 21:10 晚点名聚合",
@@ -309,46 +394,156 @@
     "url": "rollcall.html?year=2022&class=3-4",
     "section": "晚点名与后勤",
     "keywords": "2022 高三4班 高三（4）班 晚点名 21:10 47 48 未闭环",
-    "weight": 6
+    "weight": 6,
+    "effective": true
   },
   {
-    "title": "历史关联与账户迁移常见问题",
-    "summary": "旧校园卡账户序号复用、跨届冲突、历史源回执与复核处理说明。",
+    "title": "旧平台账户与历史数据说明",
+    "summary": "旧平台迁移、旧卡账户序号复用与历史公开索引说明。",
     "url": "migration.html",
-    "section": "账户迁移帮助",
-    "keywords": "0417 旧卡 账户序号 迁移 跨届 错误关联 状态争议 停止计入 源回执",
-    "weight": 5
-  },
-  {
-    "title": "我的历史返校回执",
-    "summary": "查看与当前学生账户产生跨届关联的旧返校回执及来源字段。",
-    "url": "my-return.html#history",
-    "section": "我的返校",
-    "keywords": "2022 22:03 高三4班 高三（4）班 0417 已到校 年级汇总补录 历史回执",
-    "weight": 6
-  },
-  {
-    "title": "2026 现场到校核验服务",
-    "summary": "返校日校车下车点、西门与南门现场核验安排。",
-    "url": "arrival.html",
-    "section": "到校核验",
-    "keywords": "2026 到校核验 校车 西门 南门",
+    "section": "账户与历史数据",
+    "keywords": "旧平台 迁移 旧卡 历史数据 账户序号 兼容",
     "weight": 3
   },
   {
-    "title": "2026 晚间返校与后勤服务",
-    "summary": "晚点名、食堂、宿舍热水和夜间校门服务信息。",
-    "url": "rollcall.html",
-    "section": "晚点名与后勤",
-    "keywords": "2026 晚点名 后勤 食堂 宿舍 热水",
-    "weight": 3
+    "title": "学生发展支持合作服务说明",
+    "summary": "学校与青岚青少年成长实践中心建立学生适应支持与短期转介合作。",
+    "url": "history-detail.html?id=hist_center_cooperation",
+    "section": "校史检索",
+    "keywords": "2018 学生处 青岚 青少年成长实践中心 学生发展支持 合作 转介 短期适应 辰序教育数据",
+    "weight": 4,
+    "minStage": 3
   },
   {
-    "title": "4 号楼住宿服务与维修状态",
-    "summary": "学生公寓 4 号楼热水、维修、洗衣房和床位同步状态。",
-    "url": "dorm.html",
-    "section": "晚点名与后勤",
-    "keywords": "宿舍 404 405 4号楼 维修 水管 床位 热水",
-    "weight": 3
+    "title": "2019 校园广场删除回复字符集修复记录",
+    "summary": "旧论坛字符集升级时保留的一条删除回复残片，原主题现已归档。",
+    "url": "history-detail.html?id=hist_deleted_reply_cache_2019",
+    "section": "校史检索",
+    "keywords": "2019 周岑 删除回复 字符集 修复 综合服务楼 青岚 别去 他们不是找你谈话",
+    "weight": 7,
+    "minStage": 4,
+    "requires": [
+      "viewedSamplingProtocol",
+      "viewedInvestigator2019"
+    ],
+    "effective": true
+  },
+  {
+    "title": "学生发展支持服务年度合作摘要",
+    "summary": "学生事务中心、青岚青少年成长实践中心与技术服务方的年度服务接口摘要。",
+    "url": "history-detail.html?id=hist_center_service_chain",
+    "section": "校史检索",
+    "keywords": "2024 青岚 学生发展支持 辰序教育数据 人工复核 转介 监护 服务采购 合作",
+    "weight": 5,
+    "minStage": 5,
+    "requires": [
+      "viewedCenterPublic"
+    ],
+    "effective": true
+  },
+  {
+    "title": "夜间支持事项处置记录（2019 缓存残页）",
+    "summary": "旧服务接口残留的一次夜间异常处置记录，人员字段已脱敏。",
+    "url": "history-detail.html?id=hist_center_incident_2019",
+    "section": "校史检索",
+    "keywords": "2019 周岑 青岚 事故 夜间观察 无生命体征 18:40 休学 校外合作机构",
+    "weight": 8,
+    "minStage": 5,
+    "requires": [
+      "viewedCenterPublic",
+      "viewedCenterServiceChain"
+    ],
+    "effective": true
+  },
+  {
+    "title": "8 月 31 日学生事务接驳车辆调度摘要",
+    "summary": "学生事务中心临时接驳车辆的班次与人数摘要。",
+    "url": "history-detail.html?id=hist_lin_transfer_2022",
+    "section": "校史检索",
+    "keywords": "2022 林晚 林* 0724 青岚 接驳 校车03 09:20 学生事务 短期适应支持",
+    "weight": 8,
+    "minStage": 5,
+    "requires": [
+      "viewedCenterPublic",
+      "viewedCenterServiceChain"
+    ],
+    "effective": true
+  },
+  {
+    "title": "青岚青少年成长实践中心",
+    "summary": "学生返校适应、短期成长支持与家校协同服务。",
+    "url": "center.html",
+    "section": "合作服务机构",
+    "keywords": "青岚 青少年成长实践中心 学生发展中心 短期适应 返校适应 家校协同 综合服务楼 转介",
+    "weight": 8,
+    "minStage": 4,
+    "requires": [
+      "viewedDeletedCache2019"
+    ],
+    "effective": true
+  },
+  {
+    "title": "旧校园广场字符集缓存（未归并）",
+    "summary": "下一学年预同步时发现的一条旧账号缓存，来源字段无法与当前公开账户表对齐。",
+    "url": "history-detail.html?id=hist_0724_2026_cache",
+    "section": "校史检索",
+    "keywords": "2027 2026 user_0724 0724 林晚 字符集 缓存 02:17 未归并",
+    "weight": 9,
+    "minStage": 8,
+    "effective": true
+  },
+  {
+    "title": "今晚体育馆还能借半场吗",
+    "summary": "想打会儿羽毛球，看到门口贴了活动占用。",
+    "url": "square-post.html?id=post_2017_normal",
+    "section": "校园广场",
+    "keywords": "2017 陈嘉树 体育馆 羽毛球 日常",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "物理周测最后一题是不是印错了",
+    "summary": "最后一问的图像标注好像和题干对不上。",
+    "url": "square-post.html?id=post_2019_normal",
+    "section": "校园广场",
+    "keywords": "2019 周岑 物理 周测 学习 日常",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "为什么 2026 有个学生的学籍记录有两个版本",
+    "summary": "预同步索引里看到同一条记录一份写在籍、一份写已转出。",
+    "url": "square-post.html?id=post_2027_two_versions",
+    "section": "校园广场",
+    "keywords": "2027 2026 学籍 两个版本 已转出 在籍",
+    "weight": 5,
+    "minStage": 8
+  },
+  {
+    "title": "明天机器人社到底在实验楼还是科技楼",
+    "summary": "群里两张活动表写的教室不一样，怕白跑一趟。",
+    "url": "square-post.html?id=post_2017_schedule",
+    "section": "校园广场",
+    "keywords": "2017-09-01 20:26 选修课 陈嘉树 陈嘉树 高二（2）班 明天机器人社到底在实验楼还是科技楼",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "教学楼走廊那只钟是不是慢了四十多秒",
+    "summary": "晚自习铃响的时候顺手对了下手机时间。",
+    "url": "square-post.html?id=post_2019_clock",
+    "section": "校园广场",
+    "keywords": "2019-09-04 20:33 校园日常 周岑 周岑 高二（1）班 教学楼走廊那只钟是不是慢了四十多秒",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "我妈看雷雨预警把我的出门时间改了三遍",
+    "summary": "她坚持等雨小一点再走，我已经被催着看了四次雷达图。",
+    "url": "square-post.html?id=post_2022_mom_rain",
+    "section": "校园广场",
+    "keywords": "2022-08-30 16:52 返校闲聊 晚点回 林晚 高三（4）班 我妈看雷雨预警把我的出门时间改了三遍",
+    "weight": 1,
+    "minStage": 0
   }
 ]

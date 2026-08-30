@@ -1,4 +1,4 @@
-import {get,set,hasFlag} from './state.js';
+import {get,set,hasFlag,currentReturnSubmitted,plotStage} from './state.js';
 
 /**
  * 《返校确认》1 元自愿支持弹层。
@@ -91,7 +91,7 @@ export const Paywall={
             <div class="paywall-qr-tip">请用 <strong>某宝</strong> 扫码打赏 ${cfg.price}</div>
             <div class="paywall-message" id="paywall-copy">
               <p class="paywall-msg-warm">你好，我是 abc studio 的独立开发者。</p>
-              <p class="paywall-msg-body">制作《返校确认》花了很多时间去打磨这些看起来很普通的校园页面。<br>如果你在这段返校手续里感受到了一点不安或触动，愿意支持 <strong>1元</strong> 打赏，<br>那会成为我继续制作网页解谜作品的动力。</p>
+              <p class="paywall-msg-body">制作《返校确认》花了很多时间去打磨这些看起来很普通的校园页面和旧资料。<br>如果你在这段返校手续里感受到了一点不安或触动，愿意支持 <strong>1元</strong> 打赏，<br>那会成为我继续制作网页解谜作品的动力。</p>
               <p class="paywall-msg-cute">1块钱买不到一杯奶茶，但能让我继续认真做下一份旧档案。</p>
               <p class="paywall-msg-warm2">感谢每一位愿意慢慢读完这些普通页面的人。</p>
             </div>
@@ -117,12 +117,12 @@ export const Paywall={
 
 export function maybeAutoSupport(){
   if(Paywall.hasPaid()||get(AUTO_KEY,false))return false;
-  // 对应《松涛粮站》“首次完成入口修复后弹出”的时机：
-  // 本作在跨届回执之后至少核对过一项 2022 公开业务资料，或首次尝试提交返校信息后出现；避免刚进入故事就打断浏览。
-  if(document.body.dataset.page!=='migration')return false;
-  if(!(hasFlag('formAttempted')||(hasFlag('viewedOldReceipt')&&(hasFlag('viewedAdvanceNotice')||hasFlag('viewedArrival47')||hasFlag('viewedRollcall47')))))return false;
+  // 先让玩家完成真实返校办理，并完成 2022 第一轮矛盾核对后再出现；避开开场钩子与 47/48 第一次认知反转。
+  if(!currentReturnSubmitted())return false;
+  if(!(hasFlag('viewedSquareHook')&&hasFlag('viewedLateReply')&&(hasFlag('viewedArrival47')||hasFlag('viewedRollcall47'))))return false;
+  if(plotStage()>=4)return false; // 阴谋核心揭露之后不再主动打断，只保留页脚手动入口。
   set(AUTO_KEY,true);
-  setTimeout(()=>Paywall.show(),950);
+  setTimeout(()=>Paywall.show(),900);
   return true;
 }
 
