@@ -72,7 +72,7 @@ export const Paywall={
   _onSupport(){this.markPaid();this.hide();this._showThanks()},
   _showThanks(){
     const old=document.querySelector('.paywall-toast');old?.remove();
-    const toast=document.createElement('div');toast.className='paywall-toast';toast.setAttribute('role','status');toast.textContent='感谢你的支持！愿每一次缺席，都被认真记录。';document.body.appendChild(toast);
+    const toast=document.createElement('div');toast.className='paywall-toast';toast.setAttribute('role','status');toast.textContent='感谢你的支持！愿每一条记录，都被认真对待。';document.body.appendChild(toast);
     setTimeout(()=>toast.classList.add('show'),50);setTimeout(()=>{toast.classList.remove('show');setTimeout(()=>toast.remove(),400)},3000);
   },
   _createOverlay(config){
@@ -91,9 +91,9 @@ export const Paywall={
             <div class="paywall-qr-tip">请用 <strong>某宝</strong> 扫码打赏 ${cfg.price}</div>
             <div class="paywall-message" id="paywall-copy">
               <p class="paywall-msg-warm">你好，我是 abc studio 的独立开发者。</p>
-              <p class="paywall-msg-body">制作《返校确认》花了很多时间去核对每一条日期、每一处数字与每一次页面回访。<br>如果你在这段返校手续里感受到了一点不安或触动，愿意支持 <strong>1元</strong> 打赏，<br>那会成为我继续制作网页解谜作品的动力。</p>
-              <p class="paywall-msg-cute">1块钱买不到一杯奶茶，但能让“47 / 48”继续留在下一部作品的档案里。</p>
-              <p class="paywall-msg-warm2">感谢每一位愿意读完这些普通页面、自己把真相拼起来的人。</p>
+              <p class="paywall-msg-body">制作《返校确认》花了很多时间去打磨这些看起来很普通的校园页面。<br>如果你在这段返校手续里感受到了一点不安或触动，愿意支持 <strong>1元</strong> 打赏，<br>那会成为我继续制作网页解谜作品的动力。</p>
+              <p class="paywall-msg-cute">1块钱买不到一杯奶茶，但能让我继续认真做下一份旧档案。</p>
+              <p class="paywall-msg-warm2">感谢每一位愿意慢慢读完这些普通页面的人。</p>
             </div>
           </div>
           <div class="paywall-footer">
@@ -118,9 +118,9 @@ export const Paywall={
 export function maybeAutoSupport(){
   if(Paywall.hasPaid()||get(AUTO_KEY,false))return false;
   // 对应《松涛粮站》“首次完成入口修复后弹出”的时机：
-  // 本作在玩家已主动查看跨届回执/尝试提交，并进入迁移核验页后出现，通常约 5–8 分钟。
+  // 本作在跨届回执之后至少核对过一项 2022 公开业务资料，或首次尝试提交返校信息后出现；避免刚进入故事就打断浏览。
   if(document.body.dataset.page!=='migration')return false;
-  if(!(hasFlag('viewedOldReceipt')||hasFlag('formAttempted')))return false;
+  if(!(hasFlag('formAttempted')||(hasFlag('viewedOldReceipt')&&(hasFlag('viewedAdvanceNotice')||hasFlag('viewedArrival47')||hasFlag('viewedRollcall47')))))return false;
   set(AUTO_KEY,true);
   setTimeout(()=>Paywall.show(),950);
   return true;

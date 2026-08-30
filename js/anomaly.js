@@ -32,3 +32,32 @@ export function triggerJ2(){
   const replacement=`<div class="small muted">2022 历史到校核验</div><div style="font-size:1.45rem;font-weight:700;color:#684b2d">48/48</div><div class="small">归属已确认：当前账户</div>`;
   setTimeout(()=>{box.innerHTML=replacement;box.classList.add('j2-flash');playCue('bell');setTimeout(()=>{box.innerHTML=original;box.classList.remove('j2-flash')},reduce?1600:1100)},reduce?900:700);
 }
+
+
+// Early-session micro anomalies only affect association labels, never stable evidence fields.
+// They are deliberately ambiguous enough to read as a migration UI refresh rather than a horror effect.
+export function maybeEarlyAssociationFlicker({firstVisit=false}={}){
+  if(!firstVisit||hasFlag('earlyAssociationFlickerShown'))return;
+  const badge=document.querySelector('[data-association-badge]');if(!badge)return;
+  const original=badge.textContent;
+  const delay=settings().reducedMotion?1500:1900;
+  setTimeout(()=>{
+    if(!badge.isConnected||hasFlag('earlyAssociationFlickerShown'))return;
+    flag('earlyAssociationFlickerShown');
+    badge.textContent='历史连续';badge.classList.add('soft-flicker');
+    setTimeout(()=>{badge.textContent=original;badge.classList.remove('soft-flicker')},settings().reducedMotion?850:520);
+  },delay);
+}
+
+export function maybeReturnCrossFlicker(){
+  if(hasFlag('earlyCrossFlickerShown'))return;
+  if(!(hasFlag('viewedArrival47')||hasFlag('viewedRollcall47')))return;
+  const box=document.querySelector('[data-cross-status]');if(!box)return;
+  const original=box.innerHTML;
+  setTimeout(()=>{
+    if(!box.isConnected||hasFlag('earlyCrossFlickerShown'))return;
+    flag('earlyCrossFlickerShown');
+    box.innerHTML='<strong>当前状态：待核验</strong> · 历史连续性校验完成。';box.classList.add('cross-flicker');
+    setTimeout(()=>{box.innerHTML=original;box.classList.remove('cross-flicker')},settings().reducedMotion?1050:650);
+  },settings().reducedMotion?1100:850);
+}

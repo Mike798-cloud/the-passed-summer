@@ -58,3 +58,24 @@ html{scroll-padding-top:64px}.gov-sep{display:inline-block;margin:0 8px;color:#b
 }
 @media(max-width:420px){.service-strip{grid-template-columns:1fr 1fr}.kpi-grid{grid-template-columns:1fr 1fr}.service-meta{grid-template-columns:1fr}.service-meta span,.service-meta span:nth-child(2n){grid-column:auto;border-right:0;border-bottom:1px solid #e0e6ea}.service-meta span:last-child{grid-column:auto}}
 .forum-row .title{display:flex;align-items:center;min-height:44px}.post-image[role="button"]{cursor:zoom-in}.post-image[role="button"]:focus-visible{outline:3px solid rgba(39,116,174,.34);outline-offset:3px}
+
+
+/* v2.3 guidance & typography: keep the portal realistic while making business priorities readable */
+body{font-weight:400;letter-spacing:.002em;text-rendering:optimizeLegibility}
+strong,b{font-weight:700}em,cite{font-family:"Songti SC",SimSun,serif;font-style:italic;color:#53616b}
+.school-title h1,.section-title,.subhead,.list-title,.forum-row .title,.post-content h2{font-weight:700}
+.school-title p,.govbar,.breadcrumb,.list-meta,.service-meta,.table-note,.photo-caption,.tiny{font-weight:400}
+.section-title small,.list-meta,.table-note,.photo-caption,.archive-toolbar label{font-style:normal;letter-spacing:.015em}
+.lead{font-family:"Songti SC",SimSun,"Noto Serif CJK SC",serif;font-weight:500;line-height:1.82}
+.data-table th{font-weight:700;letter-spacing:.01em}.data-table td b,.kpi b,.home-metric{font-weight:700}
+.business-note strong,.notice-box strong,.form-row>label,.form-label{font-weight:700}
+.portal-stamp,.badge{font-weight:600;letter-spacing:.02em}.deadline{font-style:italic;font-family:Georgia,"Times New Roman","Microsoft YaHei",sans-serif}
+.source-note{font-family:"Songti SC",SimSun,serif;font-style:italic;color:#697680;font-size:.8rem;line-height:1.7}
+.attention-strip{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 14px;margin:0 0 14px;border:1px solid #dfca8b;border-left:4px solid #bf8b21;background:#fffaf0;color:#544716}
+.attention-strip .attention-copy{min-width:0}.attention-strip .attention-label{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:#725500}.attention-strip .attention-label::before{content:"!";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#d49d2f;color:#fff;font:700 13px/1 Arial,sans-serif}.attention-strip p{margin:3px 0 0;font-size:.84rem;color:#706344}.attention-strip .btn{flex:0 0 auto;background:#fffdf7}
+.related-panel{margin-top:14px;padding:12px 13px;border:1px solid #d8e0e5;background:#f8fafb}.related-panel h3{margin:0 0 7px;color:#435d70;font-size:.9rem;font-weight:700}.related-panel p{margin:0 0 8px}.related-links{display:flex;flex-wrap:wrap;gap:7px 12px}.related-links a{display:inline-flex;align-items:center;min-height:38px;font-size:.84rem}.related-links a::before{content:"›";margin-right:5px;color:#7a91a2;font-weight:700}
+.pending-kpi{position:relative}.pending-kpi .pending-dot{position:absolute;right:8px;top:8px;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:#c88919;color:white;font:700 11px/20px Arial,sans-serif;text-align:center}.pending-kpi b{padding-right:24px}
+.association-badge{transition:background-color .18s ease,border-color .18s ease,color .18s ease}.association-badge.soft-flicker{background:#edf7ef!important;border-color:#b8d8c0!important;color:#2e6840!important}
+.cross-flicker{animation:crossFlicker .72s ease both}@keyframes crossFlicker{0%,100%{background:var(--warn-bg);border-color:#ead493}45%{background:#edf7ef;border-color:#b8d8c0;color:#325f40}}
+.business-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.business-route a{border:1px solid #d6dfe5;background:#fff;padding:10px 11px;min-height:58px;color:#3d5d73}.business-route a:hover{background:#f7fafc;text-decoration:none}.business-route b{display:block;font-size:.85rem}.business-route span{display:block;margin-top:2px;color:#74818b;font-size:.74rem}
+@media(max-width:700px){.attention-strip{align-items:stretch;flex-direction:column}.attention-strip .btn{width:100%}.business-route{grid-template-columns:1fr}.related-links{display:grid;grid-template-columns:1fr}.related-links a{min-height:44px}}
