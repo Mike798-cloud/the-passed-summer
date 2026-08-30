@@ -27,10 +27,10 @@ export function suggestions(term){
   else if(/2017|陈嘉树|值班表/.test(q))base=['陈嘉树 2017 校园广场','2017 旧值班表','2017 学籍状态'];
   else if(/补充核验|复核|访问质量|关注/.test(q) && stage>=3)base=stage>=6?['访问质量复核','学生事务补充核验','学生发展支持服务年度合作摘要']:['访问质量复核','学生服务访问质量抽样摘要'];
   else if(/抽样|兼容|失效标题|删除占位/.test(q) && hasFlag('viewedAttentionCache'))base=['历史检索兼容性抽样说明','失效标题 删除占位'];
-  else if(/青岚|成长实践|学生发展中心/.test(q) && stage>=4)base=stage>=5?['青岚青少年成长实践中心','学生发展支持合作服务说明','青岚 接驳','青岚 夜间支持事项']:['青岚青少年成长实践中心','学生发展支持合作服务说明'];
-  else if(/接驳|校车03|校车 03/.test(q) && stage>=5)base=['8 月 31 日学生事务接驳车辆调度摘要','青岚青少年成长实践中心'];
-  else if(/事故|无生命体征|夜间观察/.test(q) && stage>=5)base=['夜间支持事项处置记录 2019','2019 学籍状态调整'];
-  else if(/辰序|服务采购|合作摘要|人工复核/.test(q) && stage>=5)base=['学生发展支持服务年度合作摘要','学生发展支持合作服务说明'];
+  else if(/青岚|成长实践|学生发展中心|合作单位/.test(q) && stage>=3)base=stage>=4?['青岚青少年成长实践中心','学生发展支持合作服务说明','青岚 接驳','青岚 2019']:['青岚青少年成长实践中心','学生发展支持合作服务说明'];
+  else if(/接驳|校车03|校车 03|车辆调度/.test(q) && stage>=4)base=['8 月 31 日学生事务接驳车辆调度摘要','青岚青少年成长实践中心'];
+  else if(/事故|无生命体征|夜间观察|夜间支持/.test(q) && stage>=4)base=['夜间支持事项处置记录 2019','2019 学籍状态调整'];
+  else if(/辰序|服务采购|合作摘要|人工复核/.test(q) && stage>=4)base=['学生发展支持服务年度合作摘要','学生发展支持合作服务说明'];
   else if(finalChoice()&&/0724|2026学籍|学籍异常|未归并/.test(q))base=['旧校园广场字符集缓存 未归并','为什么 2026 有个学生的学籍记录有两个版本'];
   else base=index.filter(allowed).filter(x=>norm(x.title).includes(n)||norm(x.keywords).includes(n)).slice(0,5).map(x=>x.title);
 
@@ -42,7 +42,7 @@ export function suggestions(term){
     flag('glitchReviewWarningSeen');base.unshift('不要去综合服▒楼');
   }
   if(stage>=5&&!hasFlag('glitchCenterWarningSeen')&&/青岚|接驳/.test(q)){
-    flag('glitchCenterWarningSeen');base.unshift('他们会送你去▒▒');
+    flag('glitchCenterWarningSeen');base.unshift('青岚 接▒记录');
   }
   return [...new Set(base)].slice(0,6);
 }

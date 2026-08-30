@@ -1,14 +1,15 @@
 import {pageRoot,crumb,sideCommon,fetchJSON,showLoadError,refreshShared,serviceMeta,maybeAutoSupportPrompt,safeText} from './app.js';
 import {article} from './render.js';
 import {flag,visit,plotStage,hasFlag,attentionSnapshot,reviewReady,finalChoice} from './state.js';
+import {showSanEvent} from './anomaly.js';
 (async()=>{try{
  const data=await fetchJSON('data/history.json'),id=new URLSearchParams(location.search).get('id')||'hist_2022_return',stage=plotStage();
  if(id==='hist_attention_cache'&&stage<3)throw new Error('归档不存在');
  if(id==='hist_sampling_protocol'&&!hasFlag('viewedAttentionCache'))throw new Error('归档不存在');
- if(id==='hist_deleted_reply_cache_2019'&&!(stage>=4&&hasFlag('viewedSamplingProtocol')&&hasFlag('viewedInvestigator2019')))throw new Error('归档不存在');
+ if(id==='hist_deleted_reply_cache_2019'&&!(stage>=3&&hasFlag('viewedInvestigator2019')))throw new Error('归档不存在');
  if(id==='hist_center_cooperation'&&stage<3)throw new Error('归档不存在');
- if(id==='hist_center_service_chain'&&!(stage>=5&&hasFlag('viewedCenterPublic')&&hasFlag('viewedDeletedCache2019')))throw new Error('归档不存在');
- if((id==='hist_center_incident_2019'||id==='hist_lin_transfer_2022')&&!(stage>=5&&hasFlag('viewedCenterPublic')&&hasFlag('viewedDeletedCache2019')&&hasFlag('viewedCenterServiceChain')))throw new Error('归档不存在');
+ if(id==='hist_center_service_chain'&&!(stage>=4&&hasFlag('viewedCenterPublic')))throw new Error('归档不存在');
+ if((id==='hist_center_incident_2019'||id==='hist_lin_transfer_2022')&&!(stage>=4&&hasFlag('viewedCenterPublic')&&hasFlag('viewedCenterServiceChain')))throw new Error('归档不存在');
  if(id==='hist_0724_2026_cache'&&!finalChoice())throw new Error('归档不存在');
  const h=data.find(x=>x.id===id);if(!h)throw new Error('归档不存在');document.title=`${h.title}｜栖岚实验高级中学`;visit('history_detail');
  if(id==='hist_2022_return')flag('viewedOfficial48');
@@ -33,7 +34,7 @@ import {flag,visit,plotStage,hasFlag,attentionSnapshot,reviewReady,finalChoice} 
    extra=`<div class="notice-box small effective-info"><strong>缓存缺页：</strong>当前公开缓存未包含“抽样对象选择依据”“复核终止条件”和责任人签字页。</div><div class="actions"><a class="btn" href="search.html?q=${encodeURIComponent('周岑 删除回复 字符集')}">检索旧论坛兼容记录</a></div>`;
  }
  if(id==='hist_deleted_reply_cache_2019'){
-   extra=`<div class="notice-box small effective-info">该缓存只证明旧论坛曾保留过这段文本，无法确认它是在删除前公开可见，还是仅存在于清理失败的回退索引中。</div><div class="actions"><a class="btn primary" href="search.html?q=${encodeURIComponent('青岚')}">检索“青岚”</a><a class="btn" href="square-post.html?id=post_2019_gate_archive">返回原主题</a></div>`;
+   extra=`<div class="notice-box small effective-info">该缓存只证明旧论坛曾保留过这段文本，无法确认它是在删除前公开可见，还是仅存在于清理失败的回退索引中。</div><div class="actions"><a class="btn primary" href="search.html?q=${encodeURIComponent('青岚')}">按残留机构名继续检索</a><a class="btn" href="history-detail.html?id=hist_center_cooperation">查看校外合作单位公示</a><a class="btn" href="square-post.html?id=post_2019_gate_archive">返回原主题</a></div>`;
  }
  if((id==='hist_center_incident_2019'||id==='hist_lin_transfer_2022')&&reviewReady()){
    extra+=`<div class="notice-box"><strong>学生事务：</strong>当前会话存在 1 项补充核验事项。<a href="review.html">查看事项</a></div>`;
@@ -52,5 +53,6 @@ import {flag,visit,plotStage,hasFlag,attentionSnapshot,reviewReady,finalChoice} 
  }[id]||'';
  const legacyHead=['hist_2022_index','hist_deleted_reply_cache_2019','hist_center_incident_2019','hist_0724_2026_cache'].includes(id)?`<div class="old-archive-header"><span>旧系统公开缓存 / 兼容索引</span><span>资料时间：${safeText(h.date)}</span></div>`:'';
  pageRoot().innerHTML=`${crumb([{label:'校史检索',href:'history.html'},{label:h.title}])}<div class="page-grid">${legacyHead}<article class="panel ${h.type==='旧索引摘要'?'legacy-box':''}"><h2 class="section-title ${h.effectiveTitle?'effective-info':''}">${safeText(h.title)}</h2>${serviceMeta([['资料类型',h.type],['归档日期',h.date],['资料状态','公开只读']])}<div class="list-meta"><span>${safeText(h.date)}</span><span>${safeText(h.department)}</span><span class="badge gray">${safeText(h.type)}</span></div><div class="divider"></div><p class="lead ${h.effectiveTitle?'effective-info':''}">${safeText(h.summary)}</p>${article(h.body)}${extra}${related}<div class="divider"></div><div class="tiny muted">公开归档编号：QL-HIST-${h.id.toUpperCase()} · 仅用于校内公开资料检索</div></article>${sideCommon()}</div>`;
+ if(!finalChoice()&&['hist_status_2017','hist_status_2019','hist_status_2022'].includes(id)&&plotStage()>=3){showSanEvent({flagName:'sanStatusArchiveShown',title:'学籍公开摘要 · 图片字段恢复',image:'assets/img/dorm-building.webp',caption:'旧学籍附件 · 关联图片来源字段已失效',words:['停止公开更新','个人原因休学','校际转出','家庭原因暂缓返校','停止公开更新','已归档','停止公开更新','状态同步','已归档'],hold:1950,delay:850})}
  refreshShared();maybeAutoSupportPrompt();
 }catch(e){showLoadError(e)}})();

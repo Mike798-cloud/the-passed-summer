@@ -79,10 +79,6 @@
     "keywords": "2024-11-18 信息中心历史缓存 系统附件 学生服务访问质量抽样摘要（历史缓存） 访问质量 关注指数 attention_index 补充核验 C*** Z*** L***",
     "weight": 4,
     "minStage": 3,
-    "requires": [
-      "viewedInvestigator2017",
-      "viewedInvestigator2019"
-    ],
     "effective": true
   },
   {
@@ -316,10 +312,10 @@
   },
   {
     "title": "数学卷第 18 题有人会吗",
-    "summary": "救命，第 18 题最后那个参数范围我算了三遍都不一样。",
+    "summary": "普通作业互助帖中保留了当晚公开回复。",
     "url": "square-post.html?id=post_0830_hw",
     "section": "校园广场",
-    "keywords": "2022-08-30 22:51 作业互助 纸飞机   数学卷第 18 题有人会吗 2022-08-30 22:51 作业互助 纸飞机   数学卷第 18 题有人会吗 林晚 23:18 我还没回学校 明天上午再去",
+    "keywords": "2022-08-30 22:51 作业互助 纸飞机   数学卷第 18 题有人会吗 2022-08-30 22:51 作业互助 纸飞机   数学卷第 18 题有人会吗 林晚 23:18 我还没回学校 明天上午再去 晚点回 林晚 23:18 还没回学校 明天上午再去 高三4班",
     "weight": 2,
     "effective": true
   },
@@ -410,7 +406,7 @@
     "summary": "学校与青岚青少年成长实践中心建立学生适应支持与短期转介合作。",
     "url": "history-detail.html?id=hist_center_cooperation",
     "section": "校史检索",
-    "keywords": "2018 学生处 青岚 青少年成长实践中心 学生发展支持 合作 转介 短期适应 辰序教育数据",
+    "keywords": "2018 学生处 青岚 青少年成长实践中心 学生发展支持 合作 转介 短期适应 辰序教育数据 校外合作单位名录 合作机构 学生事务后续支持",
     "weight": 4,
     "minStage": 3
   },
@@ -421,9 +417,8 @@
     "section": "校史检索",
     "keywords": "2019 周岑 删除回复 字符集 修复 综合服务楼 青岚 别去 他们不是找你谈话",
     "weight": 7,
-    "minStage": 4,
+    "minStage": 3,
     "requires": [
-      "viewedSamplingProtocol",
       "viewedInvestigator2019"
     ],
     "effective": true
@@ -435,7 +430,7 @@
     "section": "校史检索",
     "keywords": "2024 青岚 学生发展支持 辰序教育数据 人工复核 转介 监护 服务采购 合作",
     "weight": 5,
-    "minStage": 5,
+    "minStage": 4,
     "requires": [
       "viewedCenterPublic"
     ],
@@ -448,7 +443,7 @@
     "section": "校史检索",
     "keywords": "2019 周岑 青岚 事故 夜间观察 无生命体征 18:40 休学 校外合作机构",
     "weight": 8,
-    "minStage": 5,
+    "minStage": 4,
     "requires": [
       "viewedCenterPublic",
       "viewedCenterServiceChain"
@@ -462,7 +457,7 @@
     "section": "校史检索",
     "keywords": "2022 林晚 林* 0724 青岚 接驳 校车03 09:20 学生事务 短期适应支持",
     "weight": 8,
-    "minStage": 5,
+    "minStage": 4,
     "requires": [
       "viewedCenterPublic",
       "viewedCenterServiceChain"
@@ -474,12 +469,9 @@
     "summary": "学生返校适应、短期成长支持与家校协同服务。",
     "url": "center.html",
     "section": "合作服务机构",
-    "keywords": "青岚 青少年成长实践中心 学生发展中心 短期适应 返校适应 家校协同 综合服务楼 转介",
+    "keywords": "青岚 青少年成长实践中心 学生发展中心 短期适应 返校适应 家校协同 综合服务楼 转介 校外合作单位 学生事务合作机构 返校适应 短期支持",
     "weight": 8,
-    "minStage": 4,
-    "requires": [
-      "viewedDeletedCache2019"
-    ],
+    "minStage": 3,
     "effective": true
   },
   {
@@ -557,5 +549,330 @@
     "requires": [
       "viewedLinInvestigation"
     ]
+  },
+  {
+    "title": "学生事务校外合作单位（公开）",
+    "summary": "学生处公开的返校适应、短期成长支持与家校协同合作单位索引。",
+    "url": "history-detail.html?id=hist_center_cooperation",
+    "section": "校史检索",
+    "keywords": "合作单位 校外合作机构 学生事务 短期适应 青岚 青少年成长实践中心 家校协同",
+    "weight": 4,
+    "minStage": 3
+  },
+  {
+    "title": "今天二食堂那个鸡排是谁最后一个拿走的",
+    "summary": "排到我正好没了。",
+    "url": "square-post.html?id=post_2017_canteen",
+    "section": "校园广场",
+    "keywords": "2017-09-02 12:17 吃饭 陈嘉树 陈嘉树 高二（2）班 今天二食堂那个鸡排是谁最后一个拿走的 排到我正好没了。 不是我，我拿的是前一个。 你这个回答更气人。 下次早点下课。",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "今天机器人终于没撞桌腿",
+    "summary": "庆祝一下，虽然只走了六米。",
+    "url": "square-post.html?id=post_2017_robotphoto",
+    "section": "校园广场",
+    "keywords": "2017-09-03 19:11 社团 陈嘉树 陈嘉树 高二（2）班 今天机器人终于没撞桌腿 庆祝一下，虽然只走了六米。 桌腿表示感谢。 你明天记得带新轮子。 六米已经是历史性突破。",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "二楼牛肉面是不是偷偷涨了一块钱",
+    "summary": "我记得上学期不是这个价。",
+    "url": "square-post.html?id=post_2019_noodles",
+    "section": "校园广场",
+    "keywords": "2019-09-02 18:49 吃饭 周岑 周岑 高二（1）班 二楼牛肉面是不是偷偷涨了一块钱 我记得上学期不是这个价。 你对价格的记忆比物理公式牢。 因为钱是真的会少。 暑假调整了份量，价目表门口有。",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "北线车今天到西门慢了六分钟",
+    "summary": "纯记录，别问我为什么又在看时间。",
+    "url": "square-post.html?id=post_2019_bus",
+    "section": "校园广场",
+    "keywords": "2019-09-05 17:24 返校交通 周岑 周岑 高二（1）班 北线车今天到西门慢了六分钟 纯记录，别问我为什么又在看时间。 你现在连校车也校时了。 真的只是顺手。 雨天正常，别研究了。",
+    "weight": 1,
+    "minStage": 3
+  },
+  {
+    "title": "开学第一节体育课千万别跑800",
+    "summary": "假期最后一天正式许愿。",
+    "url": "square-post.html?id=post_2022_pe",
+    "section": "校园广场",
+    "keywords": "2022-08-29 17:05 体育课 纸飞机 开学第一节体育课千万别跑800 假期最后一天正式许愿。 支持，建议老师看到。 老师也在广场潜水的。 删帖来得及吗。",
+    "weight": 1
+  },
+  {
+    "title": "谁返校路上帮我带一瓶盐汽水",
+    "summary": "便利店那款蓝瓶的，到了转你。",
+    "url": "square-post.html?id=post_2022_saltwater",
+    "section": "校园广场",
+    "keywords": "2022-08-29 20:31 吃饭 盐汽水 谁返校路上帮我带一瓶盐汽水 便利店那款蓝瓶的，到了转你。 我如果先到给你带。 她“先到”三个字可信度不高。 闭嘴。 截图留证。",
+    "weight": 1
+  },
+  {
+    "title": "这雨看起来完全没有要停的意思",
+    "summary": "窗户已经全是水了，我妈说再等等。",
+    "url": "square-post.html?id=post_2022_window",
+    "section": "校园广场",
+    "keywords": "2022-08-30 17:11 校园日常 晚点回 林晚 高三（4）班 这雨看起来完全没有要停的意思 窗户已经全是水了，我妈说再等等。 你就明早来，别赶。 学校又不会跑。 我也是这么说的。 那你先把数学卷写了。",
+    "weight": 1
+  },
+  {
+    "title": "西门捡到一张蓝色校园卡",
+    "summary": "卡套里有一张便利贴，失主看到私信服务台。",
+    "url": "square-post.html?id=post_2026_lostcard",
+    "section": "校园广场",
+    "keywords": "2026-08-30 14:41 失物招领 门口捡到的 西门捡到一张蓝色校园卡 卡套里有一张便利贴，失主看到私信服务台。 帮顶。 不是我的，但刚看到有人群里问。 值班台说找到本人了。",
+    "weight": 1
+  },
+  {
+    "title": "明天到底穿夏季还是秋季校服",
+    "summary": "群里三个版本，我决定问广场。",
+    "url": "square-post.html?id=post_2026_uniform",
+    "section": "校园广场",
+    "keywords": "2026-08-30 15:18 返校闲聊 短袖坚持者26 明天到底穿夏季还是秋季校服 群里三个版本，我决定问广场。 通知写夏季校服。 长裤是升旗那天吧。 好，短袖续命一天。 明天降温，别真冻着。",
+    "weight": 1
+  },
+  {
+    "title": "返校当天快递架会爆吗",
+    "summary": "建议能晚两天买的都晚两天。",
+    "url": "square-post.html?id=post_2026_delivery",
+    "section": "校园广场",
+    "keywords": "2026-08-30 15:37 校园生活 快递架管理员 返校当天快递架会爆吗 建议能晚两天买的都晚两天。 教材已经够重了，我忍。 被子已经在路上了救命。 大型件记得写宿舍楼。",
+    "weight": 1
+  },
+  {
+    "title": "新校园网登录页是不是又换了",
+    "summary": "手机能连，电脑一直跳回认证页。",
+    "url": "square-post.html?id=post_2026_wifi",
+    "section": "校园广场",
+    "keywords": "2026-08-30 16:06 校园网络 校园网受害者 新校园网登录页是不是又换了 手机能连，电脑一直跳回认证页。 清缓存，我刚弄好。 无痕窗口也可以先救急。 清缓存好了，感谢。",
+    "weight": 1
+  },
+  {
+    "title": "高二楼层是不是重新分了",
+    "summary": "我记得我们班去年不在这一侧。",
+    "url": "square-post.html?id=post_2026_classroom",
+    "section": "校园广场",
+    "keywords": "2026-08-30 16:39 班级事务 窗边第二排 高二楼层是不是重新分了 我记得我们班去年不在这一侧。 是，今年楼层整体换过。 希望离办公室远一点。 梦想很美好。",
+    "weight": 1
+  },
+  {
+    "title": "开学第一周图书馆晚座要预约吗",
+    "summary": "系统里看到预约按钮灰着。",
+    "url": "square-post.html?id=post_2026_libraryseat",
+    "section": "校园广场",
+    "keywords": "2026-08-30 17:02 图书馆 靠窗位置26 开学第一周图书馆晚座要预约吗 系统里看到预约按钮灰着。 9月1日中午开放晚座预约。 收到，谢谢。 第一周就卷起来了吗。",
+    "weight": 1
+  },
+  {
+    "title": "明晚体育馆有人拼半场吗",
+    "summary": "两个人，水平一般，缺两位。",
+    "url": "square-post.html?id=post_2026_court",
+    "section": "校园广场",
+    "keywords": "2026-08-30 17:16 体育活动 羽毛球缺一 明晚体育馆有人拼半场吗 两个人，水平一般，缺两位。 明晚七点以后可以。 好，先算你一个。 我看完社团会来。",
+    "weight": 1
+  },
+  {
+    "title": "现场报告：排骨还在，面窗口没人",
+    "summary": "返校前一天食堂比我想的热闹。",
+    "url": "square-post.html?id=post_2026_canteen_update",
+    "section": "校园广场",
+    "keywords": "2026-08-30 17:46 吃饭 一食堂观察员26 现场报告：排骨还在，面窗口没人 返校前一天食堂比我想的热闹。 你居然真的去更新了。 明天照这个路线走。 仅供今天参考，明天人山人海概不负责。",
+    "weight": 1
+  },
+  {
+    "title": "刚才四号楼是不是闪了一下电",
+    "summary": "灯灭了一秒又亮了，空调没断。",
+    "url": "square-post.html?id=post_2026_power",
+    "section": "校园广场",
+    "keywords": "2026-08-30 17:58 宿舍服务 四号楼新住户 刚才四号楼是不是闪了一下电 灯灭了一秒又亮了，空调没断。 雷雨天气瞬时波动，设备已恢复。 好，吓我一跳。 今天这雨真的很会挑时候。",
+    "weight": 1
+  },
+  {
+    "title": "教学楼一楼谁落了把透明伞",
+    "summary": "放门卫那边了，伞柄上贴着蓝色名字贴。",
+    "keywords": "2026 失物招领 走廊靠窗  教学楼一楼谁落了把透明伞",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_umbrella",
+    "weight": 1
+  },
+  {
+    "title": "校内打印店今天几点关门",
+    "summary": "想打两页住宿材料，不确定晚饭后还开不开。",
+    "keywords": "2026 校园服务 打印店排队员  校内打印店今天几点关门",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_print",
+    "weight": 1
+  },
+  {
+    "title": "宿舍窗帘洗完缩水是不是没救了",
+    "summary": "现在离地十厘米，怎么看都像被偷剪了一截。",
+    "keywords": "2026 住宿 四号楼窗边  宿舍窗帘洗完缩水是不是没救了",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_curtain",
+    "weight": 1
+  },
+  {
+    "title": "开学第一周真的要测一千米吗",
+    "summary": "求一个能让我今晚睡着的答案。",
+    "keywords": "2026 体育 不想跑圈  开学第一周真的要测一千米吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_pecheck",
+    "weight": 1
+  },
+  {
+    "title": "宿舍桌下面的插座今年还是两个吗",
+    "summary": "想确认要不要多带一个插排。",
+    "keywords": "2026 住宿 插排带了吗  宿舍桌下面的插座今年还是两个吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_socket",
+    "weight": 1
+  },
+  {
+    "title": "自动售货机的草莓牛奶补货了吗",
+    "summary": "上周路过还是空的。",
+    "keywords": "2026 吃饭 二食堂一楼  自动售货机的草莓牛奶补货了吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_milk",
+    "weight": 1
+  },
+  {
+    "title": "课表页面是不是又偷偷改了一次",
+    "summary": "下午看和现在看，周三最后一节不一样。",
+    "keywords": "2026 学习 课表刷新怪  课表页面是不是又偷偷改了一次",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_schedule",
+    "weight": 1
+  },
+  {
+    "title": "校门口文具店还卖那种0.38黑笔吗",
+    "summary": "暑假用别的笔已经受够了。",
+    "keywords": "2026 校园生活 笔袋失踪  校门口文具店还卖那种0.38黑笔吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_stationery",
+    "weight": 1
+  },
+  {
+    "title": "高二搬到四楼以后每天要爬几趟",
+    "summary": "提前计算一下我未来一年的体力损耗。",
+    "keywords": "2026 校园生活 腿已经酸了  高二搬到四楼以后每天要爬几趟",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_stairs",
+    "weight": 1
+  },
+  {
+    "title": "教室吊扇到底是统一开还是自己开",
+    "summary": "暑假返校那次有人说开关被换了。",
+    "keywords": "2026 教室 靠窗但没风  教室吊扇到底是统一开还是自己开",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_fan",
+    "weight": 1
+  },
+  {
+    "title": "校园卡照片今年还能申请换吗",
+    "summary": "两年前那张真的不想再看一年。",
+    "keywords": "2026 校园卡 证件照重灾区  校园卡照片今年还能申请换吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_idphoto",
+    "weight": 1
+  },
+  {
+    "title": "建议明天别把快递全带回来",
+    "summary": "驿站门口已经摆出第二排架子了。",
+    "keywords": "2026 快递 驿站门口  建议明天别把快递全带回来",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_parcel",
+    "weight": 1
+  },
+  {
+    "title": "西门公告栏贴的新地图有人拍了吗",
+    "summary": "我只看见高二楼层变了，没来得及拍。",
+    "keywords": "2026 校园生活 路过公告栏  西门公告栏贴的新地图有人拍了吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_noticeboard",
+    "weight": 1
+  },
+  {
+    "title": "紫菜蛋花汤终于不是透明的了",
+    "summary": "返校准备日现场播报。",
+    "keywords": "2026 吃饭 一食堂观察员  紫菜蛋花汤终于不是透明的了",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_soup",
+    "weight": 1
+  },
+  {
+    "title": "返校当天广播站会放歌吗",
+    "summary": "想申请不要一大早就放校歌。",
+    "keywords": "2026 广播站 午休歌单  返校当天广播站会放歌吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_music",
+    "weight": 1
+  },
+  {
+    "title": "宿舍柜子锁换新的要去哪里登记",
+    "summary": "旧锁暑假彻底卡死了。",
+    "keywords": "2026 住宿 钥匙串太重  宿舍柜子锁换新的要去哪里登记",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_lock",
+    "weight": 1
+  },
+  {
+    "title": "教学楼电子钟今天还是快两分钟",
+    "summary": "暑假值班路过看到的，开学会校准吧。",
+    "keywords": "2026 校园生活 时间管理失败  教学楼电子钟今天还是快两分钟",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_clock",
+    "weight": 1
+  },
+  {
+    "title": "篮球场东边那个篮筐修好了吗",
+    "summary": "暑假最后一次去还歪着。",
+    "keywords": "2026 体育 篮筐下面  篮球场东边那个篮筐修好了吗",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2026_basket",
+    "weight": 1
+  },
+  {
+    "title": "化学暑假作业第32页答案是不是印反了",
+    "summary": "我和同桌算出来刚好相反。",
+    "keywords": "2022 学习 晚点回 林晚 化学暑假作业第32页答案是不是印反了",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2022_homeworkchem",
+    "weight": 2
+  },
+  {
+    "title": "收行李这件事能不能明天再做",
+    "summary": "我的书桌正在用沉默拒绝开学。",
+    "keywords": "2022 校园日常 晚点回 林晚 收行李这件事能不能明天再做",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2022_pack",
+    "weight": 2
+  },
+  {
+    "title": "找到校园卡了，在去年冬天的外套里",
+    "summary": "感谢昨天提醒我的人。",
+    "keywords": "2022 校园卡 晚点回 林晚 找到校园卡了，在去年冬天的外套里",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2022_card",
+    "weight": 2
+  },
+  {
+    "title": "盐汽水先帮我放冰箱，我明天拿",
+    "summary": "今天看起来是真的赶不上了。",
+    "keywords": "2022 校园日常 晚点回 林晚 盐汽水先帮我放冰箱，我明天拿",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2022_drink",
+    "weight": 2
+  },
+  {
+    "title": "明早七点半谁在线谁叫我一声",
+    "summary": "我已经预见到闹钟会被我按掉。",
+    "keywords": "2022 校园日常 晚点回 林晚 明早七点半谁在线谁叫我一声",
+    "section": "校园广场",
+    "url": "square-post.html?id=post_2022_alarm2",
+    "weight": 2
   }
 ]

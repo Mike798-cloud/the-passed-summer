@@ -1,4 +1,4 @@
-const VERSION = 8;
+const VERSION = 10;
 const PREFIX = 'ql-return-v4:';
 const memory = new Map();
 
@@ -18,7 +18,10 @@ export function storageName(){return backend.name}
 
 const defaultDraft={stay:'day',arrive:'8 月 31 日 14:00–16:00',traffic:'parent'};
 function seed(){
-  set('version',VERSION);set('settings',{muted:false,reducedMotion:false,effectiveUnderline:false});set('simStartedAt',Date.now());set('readFlags',{});set('visitCount',{});set('searchHistory',[]);set('returnDraft',defaultDraft);set('currentReturnSubmitted',false);set('finalChoice',null);
+  set('version',VERSION);
+  set('settings',{muted:false,reducedMotion:false,effectiveUnderline:false});
+  set('readFlags',{});set('visitCount',{});set('searchHistory',[]);set('recentPages',[]);
+  set('returnDraft',defaultDraft);set('currentReturnSubmitted',false);set('finalChoice',null);
 }
 export function initState(){
   if(get('version')!==VERSION){
@@ -28,7 +31,6 @@ export function initState(){
     }else memory.clear();
     seed();set('settings',preservedSettings);
   }
-  if(!get('simStartedAt'))set('simStartedAt',Date.now());
 }
 
 export function flag(name,value=true){const f=get('readFlags',{});f[name]=value;set('readFlags',f);return f}
@@ -37,6 +39,16 @@ export function flags(){return get('readFlags',{})}
 export function visit(name){const v=get('visitCount',{});v[name]=(v[name]||0)+1;set('visitCount',v);return v[name]}
 export function visitCount(name){return get('visitCount',{})[name]||0}
 export function visits(){return get('visitCount',{})}
+
+export function rememberPage(title,url){
+  const t=String(title||'').replace(/\s+/g,' ').trim();
+  const u=String(url||'').trim();
+  if(!t||!u||/sso\.html(?:$|\?)/.test(u)||/404\.html/.test(u))return;
+  let rows=get('recentPages',[]);
+  rows=[{title:t,url:u},...rows.filter(x=>x&&x.url!==u)].slice(0,10);
+  set('recentPages',rows);
+}
+export function recentPages(){return get('recentPages',[])}
 
 export function pushSearch(term){
   const t=(term||'').trim();if(!t)return;
@@ -76,24 +88,53 @@ export function plotStage(){
   const f=flags();
   if(finalChoice())return 8;
   let s=0;
-  // 入口从“系统异常名单”改成对林晚本人产生好奇：玩家先认识一个人，再发现她查过旧数据。
-  if(currentReturnSubmitted()&&(f.viewedCatPost||f.viewedLinInvestigation||f.viewedSquareHook||f.searched2022))s=1;
-  // 第一轮硬证据仍要求玩家自己找到物理到校/晚点名中的 47，并看到 23:18 的公开自述。
-  if(s>=1&&(f.viewedArrival47||f.viewedRollcall47)&&f.viewedLateReply)s=2;
-  if(s>=2&&f.viewedInvestigator2017&&f.viewedInvestigator2019&&(f.viewedStatus2017||f.viewedStatus2019))s=3;
-  if(s>=3&&f.viewedAttentionCache&&f.viewedSamplingProtocol)s=4;
-  if(s>=4&&f.viewedDeletedCache2019&&f.viewedCenterPublic)s=5;
-  if(s>=5&&f.viewedCenterServiceChain&&f.viewedCenterIncident2019&&f.viewedLinTransfer2022)s=6;
+  const entered=currentReturnSubmitted()&&(f.viewedCatPost||f.viewedLinInvestigation||f.viewedSquareHook||f.searched2022||f.searchedLinWan);
+  if(entered)s=1;
+  // 2022 核心矛盾：本人 23:18 仍称未返校，并至少命中一份独立返校/点名来源。
+  const countEvidence=!!(f.viewedArrival47||f.viewedRollcall47||f.viewedOfficial48||f.viewedOldIndex);
+  if(s>=1&&f.viewedLateReply&&countEvidence)s=2;
+  // 前人轨迹不再要求 2017、2019 两条线全部看完；任一条形成“公开状态与最后调查不一致”即可继续。
+  const prior2017=!!(f.viewedInvestigator2017&&(f.viewedStatus2017||f.searched2017));
+  const prior2019=!!(f.viewedInvestigator2019&&(f.viewedStatus2019||f.searched2019));
+  if(s>=2&&(prior2017||prior2019|| (f.viewedInvestigator2017&&f.viewedInvestigator2019)))s=3;
+  // 青岚从前人轨迹自然浮出，访问质量抽样改为可选支线，不再卡主线。
+  if(s>=3&&(f.viewedCenterPublic||f.viewedCenterCooperation||f.searchedCenter||f.viewedDeletedCache2019))s=4;
+  if(s>=4&&f.viewedCenterServiceChain&&(f.viewedCenterIncident2019||f.viewedLinTransfer2022))s=5;
+  if(s>=5&&f.viewedCenterIncident2019&&f.viewedLinTransfer2022)s=6;
   if(s>=6&&f.openedReview&&reviewReady())s=7;
   return s;
 }
 
-// 氛围级别比剧情门控更细：它只决定时间、天气、在线人数与视觉/听觉状态，不决定谜题答案。
+export function reviewReady(){
+  const f=flags();
+  const core2022=!!f.viewedLateReply&&!!(f.viewedArrival47||f.viewedRollcall47||f.viewedOfficial48||f.viewedOldIndex);
+  const prior=!!((f.viewedInvestigator2019&&(f.viewedStatus2019||f.viewedDeletedCache2019))||(f.viewedInvestigator2017&&f.viewedStatus2017)||f.viewedDeletedCache2019);
+  return currentReturnSubmitted() && core2022 && prior && !!f.viewedCenterPublic && !!f.viewedCenterServiceChain && !!f.viewedCenterIncident2019 && !!f.viewedLinTransfer2022;
+}
+
+// 18:40 与 8 月 31 日 24:00 都是剧情时间锚点，不读取玩家设备真实时间。
+// 玩家关闭浏览器后，剧情时间停在当前状态；再次进入只恢复状态，不会因为现实中过了几天而错过流程。
+export function day2Started(){return hasFlag('day2Started')}
+export function advanceToDay2(){
+  if(!reviewReady())return false;
+  flag('reviewWindowMissed');flag('day2Started');flag('day2TransitionSeen');
+  return true;
+}
+export function markDay2HomeSeen(){if(day2Started())flag('day2HomeSeen')}
+export function markDay2MyReturnSeen(){if(day2Started())flag('day2MyReturnSeen')}
+export function markDay2ReviewSeen(){if(day2Started())flag('day2ReviewSeen')}
+
+// 氛围/剧情时钟：重要的是玩家“能感知的阶段”，不是现实倒计时。
 export function atmosphereStage(){
-  if(finalChoice())return 9;
+  if(finalChoice())return 14; // 9 月 1 日：一切恢复正常
+  if(day2Started()){
+    if(hasFlag('day2ReviewSeen'))return 13; // 截止前最后一轮人工处理
+    if(hasFlag('day2MyReturnSeen'))return 11; // 学籍预处理已进入本人页面
+    if(hasFlag('day2HomeSeen'))return 10; // 8/31 上午，返校窗口仍开放
+    return 9;
+  }
   if(!currentReturnSubmitted())return 0;
   const f=flags(),ps=plotStage();
-  // 氛围只能跟随已经成立的调查阶段，避免玩家通过手输 URL 或随意翻旧年份让天色/在线人数提前跳变。
   if(ps>=7)return 8;
   if(ps>=6)return 7;
   if(ps>=5)return 6;
@@ -104,6 +145,7 @@ export function atmosphereStage(){
   if(ps>=1)return 1;
   return 0;
 }
+
 export function environmentSnapshot(){
   const a=atmosphereStage();
   const rows=[
@@ -116,20 +158,38 @@ export function environmentSnapshot(){
     ['2026-08-30T18:36:00+08:00','雷阵雨','14','夜间值班','仅保留预约与应急事项'],
     ['2026-08-30T18:39:00+08:00','持续降雨','3','夜间值班','常规接驳已结束'],
     ['2026-08-30T18:40:00+08:00','持续降雨','2','预约事项','仅处理已创建事项'],
-    ['2026-08-31T08:15:00+08:00','多云转晴','118','返校服务正常','新一日校园服务已恢复']
+    ['2026-08-31T08:15:00+08:00','多云','248','返校服务正常','今日 24:00 关闭本批返校信息确认'],
+    ['2026-08-31T10:26:00+08:00','多云转阴','214','人工事项处理中','未按时完成的预约事项转入人工复核'],
+    ['2026-08-31T15:40:00+08:00','阴','168','人工事项处理中','异常账户不随普通返校窗口自动关闭'],
+    ['2026-08-31T23:12:00+08:00','小雨','42','返校窗口即将关闭','普通返校信息将在今日 24:00 定版'],
+    ['2026-08-31T23:48:00+08:00','小雨','18','仅处理异常事项','普通返校窗口即将结束，当前事项仍在人工流转'],
+    ['2026-09-01T08:12:00+08:00','晴','412','开学日服务正常','2026 秋季返校工作已结束']
   ];
   const [iso,weather,online,service,note]=rows[Math.min(a,rows.length-1)];
-  return {stage:a,now:new Date(iso),weather,online:Number(online),service,note};
+  const m=iso.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  const stamp=m?`${m[2]}-${m[3]} ${m[4]}:${m[5]}`:'08-30 17:42';
+  return {stage:a,now:new Date(iso),stamp,weather,online:Number(online),service,note};
 }
-export function anomalyLevel(){return Math.min(4,Math.max(plotStage(),Math.floor(atmosphereStage()/2)))}
-export function reviewReady(){
-  const f=flags();
-  return currentReturnSubmitted() && !!(f.viewedArrival47||f.viewedRollcall47) && !!f.viewedLateReply && !!f.viewedInvestigator2017 && !!f.viewedInvestigator2019 && !!(f.viewedStatus2017||f.viewedStatus2019) && !!f.viewedAttentionCache && !!f.viewedSamplingProtocol && !!f.viewedDeletedCache2019 && !!f.viewedCenterPublic && !!f.viewedCenterServiceChain && !!f.viewedCenterIncident2019 && !!f.viewedLinTransfer2022;
+
+export function anomalyLevel(){
+  if(finalChoice())return 0;
+  return Math.min(4,Math.max(plotStage(),Math.floor(Math.min(atmosphereStage(),8)/2)));
 }
 export function hiddenEpilogueReady(){return !!finalChoice()}
-
-const endTs = Date.parse('2026-09-01T00:00:00+08:00');
 export function simulatedNow(){return environmentSnapshot().now}
-export function countdownInfo(){const now=simulatedNow().getTime(),diff=endTs-now;if(diff<=0)return {expired:true,text:'信息冻结待核验'};const total=Math.floor(diff/60000),d=Math.floor(total/1440),h=Math.floor((total%1440)/60),m=total%60;return {expired:false,text:`剩余 ${d}天 ${h}小时 ${String(m).padStart(2,'0')}分`}}
+export function deadlineInfo(){
+  const env=environmentSnapshot();
+  if(finalChoice())return {expired:true,text:'本批返校工作已结束'};
+  if(day2Started())return {expired:false,text:env.stage>=13?'今日 24:00 截止 · 异常事项仍在人工处理':'今日 24:00 截止'};
+  return {expired:false,text:'8 月 31 日 24:00 截止'};
+}
+// 保留旧导出名，避免页面脚本依赖；不再显示现实倒计时。
+export function countdownInfo(){return deadlineInfo()}
 
-export function resetAll(){const s=settings();if(backend.name!=='memory'){try{const keys=[];for(let i=0;i<backend.obj.length;i++){const k=backend.obj.key(i);if(k&&k.startsWith(PREFIX))keys.push(k)}keys.forEach(k=>backend.obj.removeItem(k))}catch{}}else memory.clear();seed();set('settings',s)}
+export function resetAll(){
+  const s=settings();
+  if(backend.name!=='memory'){
+    try{const keys=[];for(let i=0;i<backend.obj.length;i++){const k=backend.obj.key(i);if(k&&k.startsWith(PREFIX))keys.push(k)}keys.forEach(k=>backend.obj.removeItem(k))}catch{}
+  }else memory.clear();
+  seed();set('settings',s)
+}
